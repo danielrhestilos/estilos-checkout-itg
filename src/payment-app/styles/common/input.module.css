@@ -1,0 +1,27 @@
+.commonInput {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 11px 24px;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 50px !important;
+    align-self: stretch;
+    flex-grow: 0;
+  
+    /* Add these lines */
+    font-size: 16px;
+    line-height: 18px;
+}
+  
+  /* Make sure the select's height is the same as the input's */
+.commonInput select {
+    height: 100%;
+}
+
+.commonInput select, .commonInput input {
+  font-family: Outfit;
+}

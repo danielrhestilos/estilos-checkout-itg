@@ -1,0 +1,81 @@
+.modal-password {
+  position: absolute;
+  top: 80px;
+  width: 328px;
+  background: white;
+  padding: 1rem;
+  z-index: 99;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.keypad-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px 16px;
+  gap: 16px;
+  width: 260px;
+  height: 347px;
+  background: #F5F5F5;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.keypad-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 29px;
+  grid-row-gap: 16px;
+  width: auto;
+}
+
+.keypad-body .keypad-number {
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.modal-password .button-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+}
+
+.modal-password input {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+  width: 260px;
+  height: 33px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-password .password-field {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-password .password-field h3 {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 0;
+}

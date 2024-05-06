@@ -1,0 +1,56 @@
+.simulation-table {
+  width: 260px;
+  margin: 22px auto;
+}
+.simulation-table thead tr th, .simulation-table tbody tr td {
+  padding: 6px;
+}
+
+.simulation-table thead tr th {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.simulation-table tbody tr td {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.15px;
+}
+
+.simulation-table .term-number {
+  text-align: left;
+}
+
+.simulation-table-fullscreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  top: 80px;
+}
+
+.main-total-installments {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.checkout-total-installments {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+@media (min-width: 1025px) {
+  
+  .simulation-table-fullscreen {
+    width: 260px;
+    position: relative;
+    top: 0px;
+  }
+  
+}

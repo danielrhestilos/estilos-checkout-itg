@@ -1,0 +1,8 @@
+.customSelect {
+    appearance: none; /* Elimina el indicador predeterminado del sistema */
+    padding-right: 20px; /* Ajusta el espaciado para el icono */
+    /*background-image: url('../../assets/icons/chevron-dwon.svg'); /* Ruta del archivo SVG */
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    font-family: Outfit;
+}

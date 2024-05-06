@@ -1,0 +1,2402 @@
+#app-container .AddressField.payment-billing-address-number {order: 2 !important}
+#app-container .AddressField.payment-billing-address-complement {order: 3!important}
+#app-container .AddressField.payment-billing-address-city {order: 4 !important}
+#app-container .AddressField.payment-billing-address-neighborhood {order: 5 !important}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-color      : #E91111;
+  --title-color        : #1E0508;
+  --white-color        : #FFFFFF;
+  --text-low           : #767676;
+  --text-normal        : #5A5A5A;
+  --primary-dark       : #B51D1D;
+  --title-two          : #3A3333;
+  --dark-background    : #C4C4C4;
+  --light-background   : #F5F5F5;
+  --gray-background    : #E1E1E1;
+  --background-inverted: rgb(30 5 8 / 50%);
+  --background         : #E5E5E5;
+  --border-radius      : 1.75rem;
+  --background-footer  : #151515;
+  --border-disclosure  : #272727;
+  --background-gray    : #E1E1E1;
+  --background-dot     : #9A9A9A;
+  --background-footer  : #151515;
+  --background-checkbox: #DADADA;
+  --primary-font       : 'Outfit', sans-serif;
+}
+
+body {
+  font-family     : var(--primary-font);
+  background-color: var(--white-color, #fff);
+}
+
+/* Content copied from "checkout5-custom.css" at 2019-03-01T05:12:59.334Z */
+
+/* /files/checkout5-custom.css */
+
+/* Displays the option to enter a foreign document */
+.document-box {
+  display: block;
+}
+
+/* Displays the option to enter an international phone */
+.phone-box {
+  display: block;
+}
+
+.seller {
+  display: none !important;
+}
+
+@media (min-width: 1919px) {
+  .containerShareCart {
+    background-color: #ffffff;
+    padding         : 15px;
+    box-sizing      : border-box;
+    border-radius   : 4px;
+    width           : 100%;
+    margin-top      : 1rem;
+  }
+
+  .containerShareCartAll {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1365px) {
+  .containerShareCart {
+    background-color: #ffffff;
+    padding         : 15px;
+    box-sizing      : border-box;
+    border-radius   : 4px;
+    margin-top      : 1rem;
+    width           : 100%;
+  }
+
+  .containerShareCartAll {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1535px) {
+  .containerShareCart {
+    background-color: #ffffff;
+    padding         : 15px;
+    box-sizing      : border-box;
+    border-radius   : 4px;
+    margin-top      : 1rem;
+    width           : 100%;
+  }
+
+  .containerShareCartAll {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 1439px) {
+  .containerShareCart {
+    background-color: #ffffff;
+    padding         : 15px;
+    box-sizing      : border-box;
+    border-radius   : 4px;
+    margin-top      : 1rem;
+    width           : 100%;
+  }
+
+  .containerShareCartAll {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .containerShareCart {
+    background-color   : #ffffff;
+    padding            : 15px;
+    box-sizing         : border-box;
+    border-radius      : 4px;
+    /* width           : 100%; */
+    margin-top         : 1rem;
+  }
+
+  .containerShareCartAll {
+    margin-top: 1.5rem;
+  }
+}
+
+/* .titleShareCart {
+  font-style   : normal;
+  font-weight  : 400;
+  font-size    : 21px;
+  line-height  : 25px;
+  color        : #303038;
+  margin-bottom: 10px;
+  text-align   : center;
+}
+
+.containerShareIcons {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+.shareIcon {
+  margin         : 5px;
+  margin-right   : 10%;
+  display        : inline-flex;
+  padding        : 11px;
+  border-radius  : 4px;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}*/
+
+#iconWhatsapp {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%2325d366' d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z'/%3E%3C/svg%3E");
+}
+
+#iconMessenger {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23006aff' d='M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17c.16.13.26.35.27.57l.05 1.78c.04.57.61.94 1.13.71l1.98-.87c.17-.06.36-.09.53-.06c.9.27 1.9.4 2.9.4c5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2m6 7.46l-2.93 4.67c-.47.73-1.47.92-2.17.37l-2.34-1.73a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.33-.97-.17-.68-.63l2.93-4.67c.47-.73 1.47-.92 2.17-.4l2.34 1.76a.6.6 0 0 0 .72 0l3.16-2.4c.42-.33.97.17.68.63Z'/%3E%3C/svg%3E");
+}
+
+#iconMail {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23121a79' d='M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm8-7l8-5V6l-8 5l-8-5v2l8 5Z'/%3E%3C/svg%3E");
+}
+
+/*Container Sections*/
+
+.orderform-template-holder #client-profile-data form.client-pre-email, .orderform-template-holder #client-profile-data .step.client-profile-data, .orderform-template-holder #shipping-data, .orderform-template-holder #payment-data {
+  border-radius: 8px !important;
+}
+
+/*END Container Sections*/
+
+
+/*pre-email section*/
+
+button#btn-client-pre-email {
+  height: 48px;
+}
+
+@media screen and (max-width: 1024px) {
+  button#btn-client-pre-email {
+    margin-bottom: 20px;
+  }
+
+  .client-pre-email .emailInfo {
+    margin-top: 80px !important;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+
+  .orderform-template-holder #client-profile-data form.client-pre-email.client-pre-email {
+    display: flex !important;
+  }
+
+  .client-email.input.text.required.span8.offset2 {
+    display  : flex;
+    flex-flow: column;
+    width    : 100%;
+    margin   : 0 auto !important;
+  }
+
+  button#btn-client-pre-email {
+    position : relative;
+    top      : 0;
+    width    : 100%;
+    order    : 3;
+    right    : unset;
+    left     : unset;
+    transform: unset;
+    min-width: unset;
+  }
+
+  input#client-pre-email {
+    flex: 1;
+  }
+
+  span.help.error {
+    order: 2;
+  }
+
+  input#client-pre-email {
+    order: 1;
+  }
+
+  .client-pre-email .emailInfo {
+    margin-top: 4rem !important;
+    width     : 45%;
+    max-height: 206px;
+    max-width : 380px;
+  }
+
+  /* .cart-template.mini-cart.span4 {
+    display: none;
+  } */
+
+  .row-fluid.orderform-template.span12.active {
+    width          : 100%;
+    justify-content: space-around;
+  }
+
+  .orderform-template-holder.span8 {
+    width    : 100% !important;
+    max-width: 650px;
+  }
+
+  fieldset.pre-email.row-fluid {
+    width: 50%;
+  }
+
+  input#client-pre-email,
+  button#btn-client-pre-email {
+    margin    : 0 auto;
+    margin-top: 1rem !important;
+  }
+
+  button#payment-data-submit {
+    height        : 48px;
+    margin        : 0;
+    padding-top   : 0;
+    padding-bottom: 0;
+  }
+
+  .payment-confirmation-wrap {
+    width: 286px;
+  }
+}
+
+/*pre-email section*/
+
+/*----------------Cart styles-----------------------------*/
+
+@media (max-width: 380px) {
+  .table.cart-items tbody tr td.product-name {
+    width: 50% !important;
+  }
+
+  .item-remove-text {
+    display: none !important;
+  }
+
+  .table.cart-items tbody tr td.item-remove {
+    width: 42px !important;
+  }
+}
+
+.cart-items .quantity {
+  order: 5 !important;
+}
+
+.cart-items .product-price {
+  order: 4 !important;
+}
+
+.table.cart-items td.quantity input {
+  background: #EAEAEA;
+  height    : 24px !important;
+}
+
+.cart-items .product-price {
+  order  : 4 !important;
+  display: flex;
+}
+
+.product-name a {
+  color      : #767676 !important;
+  size       : 16px;
+  line-height: 22.68px;
+  font-weight: 400;
+}
+
+.new-product-price {
+  color      : #767676 !important;
+  font-size  : 17px;
+  line-height: 22.68px;
+  font-weight: 300;
+}
+
+
+/*PAYMENT SUMMARY */
+.summary-template-holder {
+  border-radius      : 8px;
+  background-color   : var(--light-background, #F5F5F5);
+  /* box-shadow      : 0px 1px 3px 1px rgba(0, 0, 0, 0.10); */
+  padding            : 1rem;
+  margin             : 2.5rem 1rem 1rem 1rem;
+}
+
+.coupon-fields>span {
+  display       : flex;
+  flex-direction: column;
+}
+
+.coupon-fields #cart-coupon {
+  border-radius   : 50px;
+  border          : 1px solid var(--dark-background, #C4C4C4);
+  background-color: var(--white-color, #ffffff);
+  margin          : 0;
+  padding         : .75rem 1.5rem;
+}
+
+.coupon-fields #cart-coupon:placeholder-shown {
+  font-size  : 14px;
+  font-weight: 300;
+  color      : var(--text-low, #767676);
+}
+
+.coupon-fields #cart-coupon-add {
+  margin          : 1rem 0;
+  border-radius   : 50px;
+  border          : 1px solid var(--primary-color, #E91111);
+  background-color: var(--white-color, #ffffff);
+  color           : var(--primary-color, #E91111);
+  font-size       : 16px;
+  font-weight     : 600;
+  letter-spacing  : 1.25px;
+  text-transform  : uppercase;
+}
+
+.totalizers-list {
+  border-bottom: none !important;
+  border-top   : none !important;
+  padding      : 0 !important;
+}
+
+.totalizers-list .Items .info,
+.totalizers-list .Items .monetary,
+.totalizers-list .Discounts .info,
+.totalizers-list .Discounts .monetary {
+  font-size     : 16px;
+  font-weight   : 200 !important;
+  letter-spacing: 0.5px;
+  color         : var(--text-normal, #5A5A5A);
+  padding       : 0 0 .5rem 0;
+}
+
+.totalizers-list .Discounts .info {
+  text-transform: uppercase;
+}
+
+.accordion-inner .table tfoot .info,
+.accordion-inner .table tfoot .monetary {
+  font-size  : 18px;
+  font-weight: 600;
+  color      : var(--text-normal, #5A5A5A);
+}
+
+.summary-template-holder .accordion-inner {
+  margin : 0;
+  padding: 0;
+}
+
+.contentTitleAndDescriptionSummaryCart--title {
+  color      : var(--title-two, #3A3333) !important;
+  font-size  : 21px;
+  text-align : left;
+  font-weight: 500;
+}
+
+.contentTitleAndDescriptionSummaryCart--description {
+  color      : var(--text-low, #767676) !important;
+  font-size  : 18px;
+  font-weight: 400;
+  text-align : left;
+  padding    : .5rem 0;
+}
+
+.coupon-label,
+.summary-template-holder .link-choose-more-products-wrapper {
+  display       : flex !important;
+  flex-direction: column;
+  align-items   : flex-start;
+}
+
+.coupon-label label {
+  color            : var(--text-normal, #5A5A5A);
+  text-align       : center;
+  font-weight      : 500;
+  letter-spacing   : 0.32px;
+  /* margin        : 0 0 .3rem .25rem; */
+  padding          : 0;
+}
+
+.summary-template-holder .link-choose-more-products-wrapper {
+  /* width          : 100%; */
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  text-align     : center;
+}
+
+.summary-template-holder .link-choose-more-products-wrapper .link-choose-more-products {
+  width           : auto;
+  border-radius   : 50px;
+  background-color: var(--white-color, #ffffff);
+  border          : 1px solid var(--primary-color, #E91111);
+  font-size       : 16px;
+  font-weight     : 500;
+  letter-spacing  : 1.25px;
+  text-transform  : uppercase;
+  color           : var(--primary-color, #E91111);
+  text-align      : center;
+  padding         : .75rem;
+}
+
+.link-choose-more-products-wrapper #cart-choose-more-products {
+  border: 1px solid var(--white-color, #ffffff);
+  width : 90%;
+  margin: auto;
+}
+
+.summary-template-holder .cart-links-bottom {
+  position      : relative !important;
+  display       : flex !important;
+  flex-direction: column-reverse;
+}
+
+.summary-template-holder .cart-links-bottom span {
+  margin: .5rem 0;
+}
+
+.summary-template-holder #cart-to-orderform {
+  border-radius   : 50px;
+  background-color: var(--primary-color, #E91111);
+  border-color    : var(--primary-color, #E91111);
+  font-size       : 16px;
+  font-weight     : 500;
+  letter-spacing  : 1.25px;
+  text-transform  : uppercase;
+  color           : var(--white-color, #ffffff);
+  padding         : .75rem;
+  margin          : 0;
+}
+
+.summary-template-holder .cart-links-bottom {
+  margin : 0;
+  padding: 0;
+}
+
+.summaryTemplateHolder--text {
+  color         : var(--text-normal, #5A5A5A);
+  text-align    : left;
+  font-size     : 16px;
+  font-weight   : 400;
+  letter-spacing: 0.5px;
+  margin        : 0 !important;
+  vertical-align: text-top;
+}
+
+.summaryTemplateHolder--text a {
+  color          : var(--primary-color, #E91111);
+  text-decoration: underline;
+}
+
+#opt-in-terms-and-polices {
+  text-align: left;
+  margin    : 0 1rem 0 0;
+}
+
+.opt-in-terms-and-polices {
+  display        : flex;
+  flex-direction : row;
+  justify-content: flex-start;
+}
+
+/*Checkbox terms*/
+
+.summaryTemplateHolder--content {
+  margin: 0 0 .5rem 0;
+}
+
+.summaryTemplateHolder--checkbox {
+  display        : flex;
+  justify-content: space-between;
+}
+
+input[id="opt-in-terms-and-polices"] {
+  cursor          : pointer;
+  background-color: transparent;
+  width           : 19px;
+  height          : 18px;
+  appearance      : none;
+  border-radius   : 5px 5px 0 0;
+  border          : 2px solid var(--primary-color, #E91111);
+}
+
+input[id="address-toggle-0"],
+input[id="address-toggle-1"] {
+  cursor          : pointer;
+  background-color: transparent;
+  width           : 24px;
+  height          : 24px;
+  appearance      : none;
+  border-radius   : 4px 4px 0 0;
+  border          : 2px solid var(--primary-color, #E91111);
+  margin          : 0 .5rem 0 0;
+}
+
+input[class="checkboxOtherPeople"] {
+  cursor          : pointer;
+  background-color: transparent;
+  width           : 19px !important;
+  height          : 19px !important;
+  appearance      : none;
+  border-radius   : 5px 5px 0 0;
+  border          : 2px solid #5A5A5A !important;
+  margin          : 0 .5rem 0 0;
+}
+
+input.ship-checkboxNumberLabel {
+  cursor          : pointer;
+  background-color: transparent;
+  width           : 19px !important;
+  height          : 19px !important;
+  appearance      : none;
+  border-radius   : 5px 5px 0 0;
+  border          : 2px solid #5A5A5A !important;
+  margin          : 0 .5rem 0 0;
+}
+
+p.ship-checkboxNumberLabel label {
+  color      : #5A5A5A !important;
+  margin     : 0px !important;
+  font-size  : 16px;
+  font-style : normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.orderform-template-holder .step.shipping-data .vtex-omnishipping-1-x-address p.input.ship-checkboxNumberLabel.text {
+  margin-left: 0px !important;
+}
+
+button.btn.btn-link.vtex-omnishipping-1-x-btnDelivery {
+  border-radius: 50px;
+}
+
+input.ship-checkboxNumberLabel:checked,
+input[id="opt-in-terms-and-polices"]:checked,
+input[class="checkboxOtherPeople"]:checked,
+input[id="address-toggle-0"]:checked,
+input[id="address-toggle-1"]:checked {
+  content: url("data:image/svg+xml,%3Csvg width='15' height='10' viewBox='0 0 15 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.29861 9.43925C5.08192 9.43983 4.86726 9.40127 4.66708 9.32583C4.4669 9.25038 4.28518 9.13955 4.13246 8.99975L0.317341 5.53025L1.48348 4.46975L5.29861 7.93925L13.5127 0.469999L14.6789 1.5305L6.46557 8.99975C6.3127 9.13957 6.13084 9.25041 5.93052 9.32586C5.73021 9.4013 5.51542 9.43984 5.29861 9.43925Z' fill='%23E91111'/%3E%3C/svg%3E%0A");
+  border : 2px solid var(--primary-color, #E91111) !important;
+}
+
+input.success:not([invalid="true"]) {
+  background-image   : url("data:image/svg+xml,%3Csvg width='15' height='10' viewBox='0 0 15 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.29861 9.43925C5.08192 9.43983 4.86726 9.40127 4.66708 9.32583C4.4669 9.25038 4.28518 9.13955 4.13246 8.99975L0.317341 5.53025L1.48348 4.46975L5.29861 7.93925L13.5127 0.469999L14.6789 1.5305L6.46557 8.99975C6.3127 9.13957 6.13084 9.25041 5.93052 9.32586C5.73021 9.4013 5.51542 9.43984 5.29861 9.43925Z' fill='%23E91111'/%3E%3C/svg%3E%0A");
+  background-origin  : content-box;
+  background-position: right;
+}
+
+/*END Checkbox terms*/
+
+/*Select Global*/
+select {
+  -webkit-appearance   : none !important;
+  -moz-appearance      : none !important;
+  background-image     : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='20' viewBox='0 0 26 20' fill='none'%3E%3Cpath d='M-3.64352e-08 1.60034C-2.71239e-08 1.34473 0.0977907 1.08911 0.293374 0.893503C0.68454 0.502295 1.31796 0.502295 1.7069 0.893503L7.99889 7.18617L14.2931 0.893503C14.6843 0.502296 15.3177 0.502296 15.7066 0.893503C16.0978 1.28471 16.0978 1.9182 15.7066 2.30719L8.70788 9.30669C8.31671 9.6979 7.68329 9.6979 7.29435 9.30669L0.293374 2.30719C0.0977907 2.11158 -4.57464e-08 1.85596 -3.64352e-08 1.60034Z' fill='%23E91111'/%3E%3C/svg%3E") !important;
+  background-repeat    : no-repeat !important;
+  background-position-x: 98% !important;
+  background-position-y: 80% !important;
+  background-origin    : content-box;
+}
+
+p.ship-number {
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 48rem) {
+  .box-client-info-pj {
+    justify-content: flex-start !important;
+  }
+}
+
+/*END Select Global*/
+
+.box-client-info-pj {
+  display        : flex !important;
+  justify-content: center;
+  flex-direction : column;
+  color          : #E91111;
+  font-size      : 18px;
+  font-weight    : 400;
+}
+
+.client-company-document {
+  width: 100% !important;
+}
+
+svg.srp-icon-radio-selected.db path {
+  fill: #E91111;
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 63.9rem) {
+  .body-cart-vertical .cart-template.full-cart.active {
+    display  : flex;
+    flex-wrap: nowrap;
+  }
+
+  .summary-template-holder {
+    margin: 1.25rem 0 0 3.5rem;
+  }
+
+  .body-cart-vertical .summary-template-holder {
+    width: 35%;
+  }
+
+  .cart-fixed-transition .summary-template-holder .summary-coupon fieldset.coupon-fieldset>div[style*="none"] {
+    display: none !important;
+  }
+}
+
+.titleShareCart {
+  font-style   : normal;
+  font-weight  : 400;
+  font-size    : 21px;
+  line-height  : 25px;
+  color        : #303038;
+  margin-bottom: 10px;
+  text-align   : center;
+}
+
+.containerShareIcons {
+  display        : flex;
+  justify-content: space-evenly;
+  align-items    : center;
+}
+
+.shareIcon {
+  margin            : 5px;
+  /* margin-right   : 10%; */
+  display           : inline-flex;
+  padding           : 11px;
+  border-radius     : 4px;
+  display           : flex;
+  justify-content   : center;
+  align-items       : center;
+}
+
+#iconWhatsapp {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%2325d366' d='M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28z'/%3E%3C/svg%3E");
+}
+
+#iconMessenger {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23006aff' d='M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17c.16.13.26.35.27.57l.05 1.78c.04.57.61.94 1.13.71l1.98-.87c.17-.06.36-.09.53-.06c.9.27 1.9.4 2.9.4c5.64 0 10-4.13 10-9.7C22 6.13 17.64 2 12 2m6 7.46l-2.93 4.67c-.47.73-1.47.92-2.17.37l-2.34-1.73a.6.6 0 0 0-.72 0l-3.16 2.4c-.42.33-.97-.17-.68-.63l2.93-4.67c.47-.73 1.47-.92 2.17-.4l2.34 1.76a.6.6 0 0 0 .72 0l3.16-2.4c.42-.33.97.17.68.63Z'/%3E%3C/svg%3E");
+}
+
+#iconMail {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23121a79' d='M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm8-7l8-5V6l-8 5l-8-5v2l8 5Z'/%3E%3C/svg%3E");
+}
+
+/*Cart styles*/
+
+.v-custom-product-item-wrap .quantity {
+  border-radius: 15px !important;
+  background   : #eaeaea;
+  width        : 90px;
+  height       : 24px;
+}
+
+.table.cart-items td.quantity .item-quantity-change.item-quantity-change-increment i:before {
+  color: #e91111;
+}
+
+.item-remove-text {
+  display: flex !important;
+  color: #767676;
+}
+
+.manualprice-link-remove,
+.item-link-remove {
+  gap           : 17px;
+  flex-direction: row-reverse;
+  align-items   : center;
+  display       : flex;
+}
+
+@media screen and (max-width: 767px) {
+  .table.cart-items tbody tr td.product-price a.manualprice-link-remove {
+    left: -24px;
+  }
+}
+
+.table.cart-items tbody tr td.product-price a.manualprice-link-remove {
+  left: -16px;
+}
+
+.cart-more-options,
+.cart-template-holder .cart {
+  padding: 20px 5px !important;
+}
+
+.table.cart-items tbody tr td.item-remove {
+  width: 116px !important;
+}
+
+.table.cart-items tbody tr td.product-name {
+  width: 30% !important;
+}
+
+.full-cart .cart table tbody tr td.item-remove {
+  right: 5px !important;
+}
+
+.table.cart-items i.icon.icon-remove.item-remove-ico:before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cg clip-path='url(%23clip0_5919_18716)'%3E%3Cpath d='M21 4H17.9C17.6679 2.87141 17.0538 1.85735 16.1613 1.12872C15.2687 0.40009 14.1522 0.00145452 13 0L11 0C9.8478 0.00145452 8.73132 0.40009 7.83875 1.12872C6.94618 1.85735 6.3321 2.87141 6.1 4H3C2.73478 4 2.48043 4.10536 2.29289 4.29289C2.10536 4.48043 2 4.73478 2 5C2 5.26522 2.10536 5.51957 2.29289 5.70711C2.48043 5.89464 2.73478 6 3 6H4V19C4.00159 20.3256 4.52888 21.5964 5.46622 22.5338C6.40356 23.4711 7.67441 23.9984 9 24H15C16.3256 23.9984 17.5964 23.4711 18.5338 22.5338C19.4711 21.5964 19.9984 20.3256 20 19V6H21C21.2652 6 21.5196 5.89464 21.7071 5.70711C21.8946 5.51957 22 5.26522 22 5C22 4.73478 21.8946 4.48043 21.7071 4.29289C21.5196 4.10536 21.2652 4 21 4ZM11 2H13C13.6203 2.00076 14.2251 2.19338 14.7316 2.55144C15.2381 2.90951 15.6214 3.41549 15.829 4H8.171C8.37858 3.41549 8.7619 2.90951 9.26839 2.55144C9.77487 2.19338 10.3797 2.00076 11 2ZM18 19C18 19.7956 17.6839 20.5587 17.1213 21.1213C16.5587 21.6839 15.7956 22 15 22H9C8.20435 22 7.44129 21.6839 6.87868 21.1213C6.31607 20.5587 6 19.7956 6 19V6H18V19Z' fill='%23767676'/%3E%3Cpath d='M10 18C10.2652 18 10.5196 17.8946 10.7071 17.7071C10.8946 17.5196 11 17.2652 11 17V11C11 10.7348 10.8946 10.4804 10.7071 10.2929C10.5196 10.1054 10.2652 10 10 10C9.73478 10 9.48043 10.1054 9.29289 10.2929C9.10536 10.4804 9 10.7348 9 11V17C9 17.2652 9.10536 17.5196 9.29289 17.7071C9.48043 17.8946 9.73478 18 10 18Z' fill='%23767676'/%3E%3Cpath d='M14 18C14.2652 18 14.5196 17.8946 14.7071 17.7071C14.8946 17.5196 15 17.2652 15 17V11C15 10.7348 14.8946 10.4804 14.7071 10.2929C14.5196 10.1054 14.2652 10 14 10C13.7348 10 13.4804 10.1054 13.2929 10.2929C13.1054 10.4804 13 10.7348 13 11V17C13 17.2652 13.1054 17.5196 13.2929 17.7071C13.4804 17.8946 13.7348 18 14 18Z' fill='%23767676'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_5919_18716'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") !important;
+  /* content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25.33' height='28' viewBox='0 0 21.33 24'%3E%3Cpath fill='%239f9f9f' d='M7 21q-.825 0-1.413-.588T5 19V6q-.425 0-.713-.288T4 5q0-.425.288-.713T5 4h4q0-.425.288-.713T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.588 1.413T17 21H7Zm2-5q0 .425.288.713T10 17q.425 0 .713-.288T11 16V9q0-.425-.288-.713T10 8q-.425 0-.713.288T9 9v7Zm4 0q0 .425.288.713T14 17q.425 0 .713-.288T15 16V9q0-.425-.288-.713T14 8q-.425 0-.713.288T13 9v7Z'/%3E%3C/svg%3E") !important; */
+  width  : 15px;
+  height : 15px;
+}
+
+@media (max-width: 415px) {
+  .table.cart-items tbody tr td.product-name {
+    width: 50% !important;
+  }
+
+  .item-remove-text {
+    display: none !important;
+  }
+
+  .table.cart-items tbody tr td.item-remove {
+    width: 42px !important;
+  }
+}
+
+/* ------------ Personal data -------- */
+
+/*------Mobile styles -------*/
+
+p.client-phone.input.pull-left.text.required.mask:last-child {
+  width: unset !important;
+}
+
+.orderform-template .cart-template.mini-cart .summary-template-holder .summary>.summary-coupon-wrap {
+  display: none !important;
+}
+
+p.client-phone.input.pull-left.text.required.mask:last-child {
+  width: unset;
+}
+
+.client-pre-email-h small {
+  font-size    : 18px !important;
+  font-style   : normal !important;
+  font-weight  : 400 !important;
+  line-height  : normal !important;
+  color        : #5a5a5a !important;
+  margin-bottom: 3rem !important;
+}
+
+.client-pre-email-h small::before {
+  content    : 'Ingresa tu email para continuar con la compra. ';
+  font-size  : 18px;
+  font-style : normal;
+  font-weight: 400;
+  line-height: normal;
+  color      : #5a5a5a;
+}
+
+.client-email {
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 0.32px;
+  color         : #5a5a5a;
+}
+
+.client-email input {
+  margin-top: 0.6rem;
+}
+
+.input-block-level {
+  border-radius: 50px !important;
+  padding      : 11px 24px !important;
+  align-items  : center !important;
+  border       : 1px solid #c4c4c4 !important;
+  background   : #fff !important;
+  font-size    : 14px !important;
+  font-style   : normal !important;
+  font-weight  : 300 !important;
+  line-height  : normal !important;
+  color        : #767676 !important;
+}
+
+.client-pre-email .client-email.input.text .btn-success {
+  bottom: 50% !important;
+}
+
+.client-pre-email .emailInfo {
+  margin-top: 107px !important;
+}
+
+.client-pre-email .client-email.input.text .btn-success {
+  border-radius : 50px !important;
+  background    : #e91111 !important;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  border        : none;
+}
+
+.emailInfo {
+  border-radius: 8px !important;
+  background   : #f5f5f5 !important;
+  box-shadow   : 0px 1px 3px 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.client-pre-email .emailInfo ul {
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : 26px;
+  letter-spacing: 0.5px;
+  color         : #5a5a5a;
+}
+
+.client-pre-email .emailInfo .icon-ok,
+.client-pre-email .emailInfo h3 {
+  color      : #3a3333 !important;
+  font-size  : 18px !important;
+  font-style : normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+.icon-lock {
+  display: none;
+}
+
+.orderform-template-holder .span8 {
+  margin-top: 2rem;
+}
+
+.step.accordion-group.shipping-data .accordion-heading span,
+.step.accordion-group.shipping-data.vtex-omnishipping-1-x-shippingDataDev .accordion-heading span,
+.step.accordion-group.client-profile-data.filled span.accordion-toggle.collapsed span {
+  color    : transparent !important;
+  font-size: 0px !important;
+}
+
+.step.accordion-group.client-profile-data.filled span.accordion-toggle.collapsed span:after {
+  content       : "Datos personales";
+  color         : #323232;
+  font-size     : 20px;
+  vertical-align: middle;
+  line-height   : initial;
+}
+
+.step.accordion-group.shipping-data .accordion-heading span:after,
+.step.accordion-group.shipping-data.vtex-omnishipping-1-x-shippingDataDev .accordion-heading span:after {
+  content       : "Datos de envío";
+  color         : #323232 !important;
+  font-size     : 20px;
+  vertical-align: middle;
+  line-height   : initial;
+}
+
+.box-client-info-pf .client-email {
+  display: none !important;
+}
+
+p.client-notice.notice {
+  font-size  : 18px;
+  font-style : normal;
+  font-weight: 400;
+  line-height: normal;
+  color      : #5a5a5a;
+}
+
+.client-first-name,
+.client-last-name,
+.client-document,
+.client-phone {
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+  color         : #767676;
+}
+
+.client-first-name input,
+.client-last-name input,
+.client-document input,
+.client-phone input {
+  border-radius: 50px !important;
+  padding      : 11px 24px !important;
+  align-items  : center !important;
+  border       : 1px solid #c4c4c4 !important;
+  background   : #fff !important;
+  font-size    : 14px !important;
+  font-style   : normal !important;
+  font-weight  : 300 !important;
+  line-height  : normal !important;
+  color        : #767676 !important;
+  height       : 48px !important;
+  width        : calc(100% -5px) !important;
+}
+
+p.client-new-document.input.pull-left.text.required.mask .input-small {
+  border-radius: 50px !important;
+  padding      : 11px 24px !important;
+  align-items  : center !important;
+  border       : 1px solid #c4c4c4 !important;
+  background   : #fff !important;
+  font-size    : 14px !important;
+  font-style   : normal !important;
+  font-weight  : 300 !important;
+  line-height  : normal !important;
+  color        : #767676 !important;
+  height       : 48px !important;
+  width        : 184px;
+}
+
+
+.input-small+span.error {
+  width: 100%;
+}
+
+.other-document p.client-document-type.input.pull-left.text.required.mask label,
+.other-document p.client-new-document.input.pull-left.text.required.mask label {
+  font-size     : 0;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+}
+
+
+.other-document p.client-document-type.input.pull-left.text.required.mask label::after {
+  content  : "Documento";
+  font-size: 16px;
+  color    : #767676;
+}
+
+.other-document p.client-new-document.input.pull-left.text.required.mask label::after {
+  content  : "Número de documento";
+  font-size: 16px;
+  color    : #767676;
+}
+
+.other-document p.client-document-type.input.pull-left.text.required.mask label::after {
+  content       : 'Documento';
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+  color         : #767676;
+}
+
+.other-document p.client-new-document.input.pull-left.text.required.mask label::after {
+  content       : 'Número de documento';
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+  color         : #767676;
+}
+
+.client-profile-data h5.visible,
+li.link-use-country-document.link,
+.phone-box {
+  display: none !important;
+}
+
+a#is-corporate-client,
+a#not-corporate-client {
+  font-size: 0;
+}
+
+a#is-corporate-client:after {
+  content  : "Solicitar Factura";
+  font-size: 18px;
+}
+
+a#not-corporate-client:after {
+  content  : "Ocultar, solo deseo boleta";
+  font-size: 18px;
+}
+
+.box-client-info-pf .client-document {
+  display: none !important;
+}
+
+.btn-submit-wrapper .btn-success {
+  border-radius : 50px !important;
+  background    : #e91111 !important;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  border        : none;
+}
+
+.emailInfo .icon-ok::before {
+  content: '•';
+}
+
+.box-step p {
+  font-size  : 16px;
+  font-style : normal;
+  font-weight: 300;
+  line-height: normal;
+  color      : #5a5a5a;
+}
+
+
+.client-first-name label,
+.client-last-name label,
+.client-phone label {
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+  color         : #767676;
+}
+
+.box-client-info-pf div {
+  width  : 100%;
+  display: flex;
+}
+
+.other-document {
+  margin-left: 0.6rem;
+  display    : flex;
+}
+
+.cart h1 {
+  color      : var(--ttulo-2, #3a3333);
+  font-family: Outfit !important;
+  font-size  : 24px !important;
+  font-style : normal !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
+}
+
+body#checkoutMainContainer {
+  padding-bottom: 0 !important;
+}
+
+/*Header stepper container*/
+.checkout-stepper {
+  display        : flex;
+  width          : 100%;
+  justify-content: center;
+  align-items    : center;
+}
+
+div.inActive {
+  background-color: #767676 !important;
+}
+
+.orderform-template .cart-template.mini-cart .summary-totalizers tfoot tr td,
+.orderform-template .cart-template.mini-cart .summary-totalizers tfoot tr td .monetary {
+  color      : var(--text-normal, #5A5A5A) !important;
+  font-size  : 18px;
+  font-weight: 600 !important;
+}
+
+.orderform-template .cart-template.mini-cart .summary-totalizers tbody td {
+  color         : var(--text-normal, #5A5A5A);
+  font-size     : 16px;
+  font-weight   : 200 !important;
+  letter-spacing: 0.5px;
+}
+
+.cart-fixed-transition .summary-template-holder {
+  margin          : 0;
+  box-shadow      : none;
+  background-color: #f5f5f5 !important;
+}
+
+.other-document {
+  margin-left    : 0.6rem;
+  display        : flex;
+  justify-content: space-between;
+  width          : calc(50% - 1px);
+}
+
+.orderform-template .cart-template.mini-cart .summary-template-holder .summary>.summary-coupon-wrap {
+  border: none !important;
+}
+
+.cart-fixed-transition .summary-template-holder {
+  margin          : 0;
+  box-shadow      : none;
+  background-color: #f5f5f5 !important;
+}
+
+/*END PAYMENT SUMMARY */
+
+.orderform-template-holder .step.client-profile-data .client-document,
+.orderform-template-holder .step.client-profile-data .client-phone {
+  width: calc(50% - -289px);
+}
+
+.client-phone {
+  width: 100% !important;
+}
+
+p.client-first-name.input.pull-left.text.required,
+p.client-last-name.input.pull-left.text.required {
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width:700px) {
+  p.client-document-type.input.pull-left.text.required.mask {
+    margin: 0;
+  }
+
+  .box-client-info-pf div {
+    margin        : 0;
+    flex-direction: column;
+  }
+
+  p.client-document-type.input.pull-left.text.required.mask select,
+  .orderform-template-holder .step.client-profile-data .client-document,
+  .orderform-template-holder .step.client-profile-data .client-phone {
+    width: calc(100% - 5px) !important;
+  }
+}
+
+/*Header stepper container*/
+.checkout-stepper {
+  display        : flex;
+  width          : 100%;
+  justify-content: center;
+  align-items    : center;
+}
+
+#iconMail {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23121a79' d='M4 20q-.825 0-1.413-.588T2 18V6q0-.825.588-1.413T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.588 1.413T20 20H4Zm8-7l8-5V6l-8 5l-8-5v2l8 5Z'/%3E%3C/svg%3E");
+}
+
+body#checkoutMainContainer {
+  padding-bottom: 0 !important;
+}
+
+/*Header stepper container*/
+.checkout-stepper {
+  display        : flex;
+  width          : 100%;
+  justify-content: center;
+  align-items    : center;
+}
+
+div.inActive {
+  background-color: #767676 !important;
+}
+
+hr.inActive {
+  border-top: 1px solid transparent !important;
+}
+
+/*Header container*/
+.goback-and-logo-container {
+  display        : flex;
+  width          : 100%;
+  justify-content: space-between;
+  align-items    : center;
+  height         : 4rem;
+  max-width      : 1366px;
+  margin         : 0 auto;
+}
+
+.headerContainer {
+  background: #e91111;
+  height    : 100%;
+  padding   : 0 1rem;
+  max-height: 64px;
+}
+
+a.goHome,
+a.goCart,
+a.goEmail,
+a.goProfile,
+a.goShipping {
+  text-decoration: unset;
+  cursor         : pointer;
+}
+
+a.goHome span,
+a.goCart span,
+a.goEmail span,
+a.goProfile span,
+a.goShipping span {
+  color: #fff;
+}
+
+a.goHome img,
+a.goCart img,
+a.goEmail img,
+a.goProfile img,
+a.goShipping img {
+  width : 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 48rem) {
+
+  a.goHome span,
+  a.goCart span,
+  a.goEmail span,
+  a.goProfile span,
+  a.goShipping span {
+    display: none;
+  }
+}
+
+/*END Header container*/
+
+/*Header stepper*/
+.checkout-stepper {
+  display        : flex;
+  width          : 100%;
+  justify-content: center;
+  align-items    : center;
+  margin         : 1rem 0;
+}
+
+div.show,
+div.profile,
+div.shipping,
+div.payment {
+  width           : 12px;
+  height          : 12px;
+  background-color: #e91111;
+  border-radius   : 50px;
+}
+
+hr.profile,
+hr.shipping,
+hr.payment {
+  margin    : 0;
+  border    : none;
+  border-top: 3px solid #e91111;
+  width     : 46px;
+}
+
+/*END header sdtepper*/
+
+/*simulate shipping*/
+.cart-more-options #shipping-preview-container {
+  display: block !important;
+}
+
+.cart-more-options .srp-container .srp-main-title,
+.cart-more-options .srp-container .srp-description {
+  display: none;
+}
+
+.cart-more-options .srp-container form.srp-postal-code__form.dib.relative {
+  width     : 100%;
+  text-align: center;
+}
+
+.cart-more-options .srp-container .srp-data {
+  text-align: center;
+}
+
+.vtex-shipping-preview-0-x-postalCodeSelect:before {
+  content       : 'Llevamos el pedido a la puerta de tu casa';
+  color         : #3a3333;
+  font-size     : 20px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+  text-align    : initial !important;
+}
+
+.vtex-shipping-preview-0-x-postalCodeSelect>div {
+  width        : 100%;
+  margin-bottom: 1.6rem;
+}
+
+p.input.ship-state.required.text,
+p.input.ship-city.required.text,
+p.input.ship-neighborhood.required.text {
+  width: 100%;
+}
+
+.vtex-shipping-preview-0-x-postalCodeSelect p label {
+  text-align    : initial;
+  padding-left  : 10px;
+  padding-bottom: 1rem;
+  padding-top   : 1.5rem;
+  color         : #767676;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+}
+
+select#ship-state,
+select#ship-city,
+select#ship-neighborhood {
+  width        : 100%;
+  max-width    : 296px !important;
+  border-radius: 50px;
+  border       : 1px solid var(--text-low, #767676);
+  background   : var(--white, #fff);
+}
+
+button#cart-shipping-calculate,
+button#shipping-calculate-link {
+  font-size       : 0;
+  color           : #e91111;
+  border-color    : #e91111;
+  border-radius   : 50px;
+  background-color: #fff;
+  width           : 100%;
+  max-width       : 264px;
+  padding         : 12px 48px;
+  margin          : 0 auto;
+}
+
+button#cart-shipping-calculate:after,
+button#shipping-calculate-link:after {
+  content       : 'calcular envío';
+  font-size     : 1rem;
+  text-transform: uppercase;
+}
+
+.address-summary.address-summary-PER span,
+.vtex-omnishipping-1-x-summaryPackage.shp-summary-package span{
+    font-size: 14px;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    color: #5a5a5a;
+}
+
+p.client-profile-email .email {
+  display: none;
+}
+
+@media screen and (min-width: 48rem) {
+  .cart-more-options .srp-container .srp-data {
+    text-align: initial;
+  }
+
+  .vtex-shipping-preview-0-x-postalCodeSelect div {
+    display: flex;
+  }
+
+  select#ship-state,
+  select#ship-city,
+  select#ship-neighborhood {
+    max-width: 180px !important;
+  }
+
+  .vtex-shipping-preview-0-x-postalCodeSelect .ship-city {
+    margin-right: 0;
+  }
+
+  button#cart-shipping-calculate {
+    padding  : 12px 24px !important;
+    max-width: 190px !important;
+  }
+}
+
+/*END simulate shipping*/
+
+/* footer sdtepper*/
+.footerContainer {
+  background    : #E91111;
+  height        : 100%;
+  padding       : 0 1rem;
+  height        : 6.5rem;
+  padding-bottom: 1rem;
+}
+
+.elements-footer-container {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-evenly;
+  color          : #fff;
+  align-items    : center;
+  height         : 100%;
+  width          : 80%;
+  margin         : 0 auto;
+  text-align     : center;
+}
+
+.elements-footer-container p.title {
+  margin-bottom : 0;
+  text-align    : center;
+  font-size     : 14px;
+  font-style    : normal;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 0.28px;
+}
+
+@media screen and (min-width: 48rem) {
+  .footerContainer {
+    height        : 64px;
+    padding-bottom: 0;
+  }
+
+  .elements-footer-container {
+    flex-direction : row;
+    justify-content: center;
+    height         : 100%;
+    width          : 100%;
+  }
+
+  .elements-footer-container p.title:after {
+    content: '|';
+    margin : 0 10px;
+  }
+
+  .box-client-info-pf div .select-document-custom {
+    height       : 48px !important;
+    border       : 1px solid #c4c4c4 !important;
+    border-radius: 50px !important;
+    padding      : .3rem .5rem .3rem 1rem !important;
+  }
+}
+
+@media screen and (min-width: 63.9rem) {
+
+  /*SUMMARY CART*/
+  .body-cart-vertical .cart-template .full-cart .active {
+    display  : flex;
+    flex-wrap: nowrap;
+  }
+
+  .box-client-info-pf div {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : wrap;
+    gap           : 1rem;
+    margin        : 0 !important;
+  }
+
+  .box-client-info-pf div .client-document-type {
+    margin: 0;
+    width : 20%;
+  }
+
+  .box-client-info-pf div .client-new-document {
+    margin: 0;
+    width : 75%;
+  }
+}
+
+/*END SUMMARY CART*/
+
+.elements-footer-container p.description {
+  margin-bottom: 0;
+  font-size    : 14px;
+  font-style   : normal;
+  font-weight  : 500;
+  line-height  : normal;
+}
+
+/*END footer sdtepper*/
+
+/*Payment section*/
+.App.iframe-custom-private-401-payment-group {
+  background: #f5f5f5;
+}
+
+.payment-method,
+.App.iframe-custom-private-401-payment-group {
+  background: #f5f5f5;
+}
+
+.CardForm label {
+  color      : #5a5a5a;
+  font-weight: 600;
+  font-size  : 1rem;
+}
+
+.PaymentCardNumber.input.text.required label.FormFieldLabel {
+  font-size: 0;
+}
+
+.PaymentCardNumber.input.text.required label.FormFieldLabel:before {
+  font-size  : 16px;
+  font-weight: 400;
+  color      : #5A5A5A;
+  content    : 'Ingresa el número de tarjeta';
+}
+
+.PaymentInstallments label.FormFieldLabel.hide {
+  font-size: 0;
+}
+
+p.PaymentCardHolderName label.FormFieldLabel {
+  font-size: 0;
+}
+
+p.PaymentCardHolderName label.FormFieldLabel:before {
+  font-size  : 16px;
+  font-weight: 400;
+  color      : #5A5A5A;
+  content    : 'Ingresa el nombre en la tarjeta';
+}
+
+.PaymentCardDueDate.clearfix {
+  display  : flex;
+  flex-wrap: wrap;
+}
+
+label.FormFieldLabel.pull-left {
+  font-size  : 16px;
+  font-weight: 400;
+  color      : #5A5A5A;
+}
+
+p.payment-card-due-month.input.text.required,
+p.payment-card-lash,
+p.payment-card-due-year.input.text.required {
+  display        : flex;
+  justify-content: space-around;
+  width          : 45%;
+}
+
+.PaymentCardCVV.input.text.required {
+  display       : flex;
+  flex-direction: column;
+}
+
+.PaymentInstallments #creditCardpayment-card-0Brand,
+.PaymentInstallments #creditCardpayment-card-1Brand {
+  max-width: unset;
+}
+
+.PaymentCardDueDate .payment-card-lash {
+  align-items: center;
+  margin     : 0px !important;
+}
+
+.PaymentCardDueDate.clearfix label.FormFieldLabel.pull-left {
+  width: 100% !important;
+}
+
+p.payment-card-lash {
+  width: 9% !important;
+}
+
+.orderform-template-holder .v-custom-payment-item-wrap.active {
+  border-color: #F5F5F5;
+  box-shadow  : 0px 1px 3px 1px #F5F5F5;
+}
+
+.orderform-template-holder #payment-data .v-custom-payment-item-wrap .payment-group-item.active {
+  border                    : unset;
+  background                : #F5F5F5;
+  border-bottom-left-radius : unset;
+  border-bottom-right-radius: unset;
+}
+
+.App.iframe-credit-card-payment-group,
+#app-container {
+  background: none;
+}
+
+.PaymentCardCVV .PaymentCardCVVHelp {
+  font-size: 0.56rem !important;
+}
+
+.PaymentCardCVVHelp {
+  margin-top : 1% !important;
+  margin-left: 25% !important;
+}
+
+.cvv-help-arrow {
+  margin-top: 1% !important;
+}
+
+
+.payment-group-item-cards-estilos .card-flag.Estilos {
+  background-image : url("data:image/svg+xml,%3Csvg width='53' height='32' viewBox='0 0 53 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Tarjeta estilos' clip-path='url(%23clip0_1690_26294)'%3E%3Cpath id='Vector' d='M52.3636 29.5777C52.3636 30.9162 51.243 32 49.8619 32H2.49944C1.11829 32 0 30.9162 0 29.5777V2.42458C0 1.08603 1.1206 0 2.49944 0H49.8619C51.243 0 52.3636 1.08603 52.3636 2.42458V29.5777Z' fill='url(%23paint0_linear_1690_26294)'/%3E%3Cpath id='Vector_2' d='M7.57271 14.8962C8.95847 14.8872 8.84087 15.9978 8.84087 15.9978C8.84087 15.9978 8.8501 17.3073 6.84409 17.4437C6.06705 17.4951 5.39838 17.3565 5.39838 17.3565C5.39838 17.3565 5.51598 14.9096 7.57271 14.8984V14.8962ZM37.8449 20.7219C35.5438 20.6884 35.6568 18.0671 35.6568 17.7587C35.6568 17.4504 35.6568 14.9096 37.9141 14.9096C40.1714 14.9096 40.1 17.79 40.1 17.79C40.1 17.79 40.1968 20.7554 37.8426 20.7219H37.8449ZM46.759 17.0526C46.759 17.0526 46.1894 16.847 45.9842 16.7576C45.7606 16.6571 44.9974 16.4381 44.9466 15.8079C44.9028 15.18 45.4401 14.8537 46.2402 14.8537C46.7959 14.8537 47.121 14.9632 47.9879 15.3252C48.0317 15.3431 48.1539 15.3856 48.2231 15.3967C48.2416 15.3967 48.2554 15.399 48.2715 15.399C48.2762 15.399 48.2785 15.399 48.2854 15.399C48.4237 15.3967 48.5436 15.3073 48.5851 15.1867C48.5943 15.1554 48.6013 15.1152 48.6036 15.0705V14.2347C48.6036 14.1811 48.5943 14.1252 48.5805 14.0783C48.4721 13.7208 48.0133 13.5308 47.5706 13.4235C47.1648 13.3252 46.5745 13.2202 45.6407 13.2872C45.0481 13.3453 44.5777 13.4749 44.1996 13.647C44.1788 13.6537 44.1673 13.6627 44.1489 13.6671H44.1442C43.2588 14.0492 42.6409 14.9073 42.6409 15.9062C42.6409 16.7554 43.0928 17.5062 43.7707 17.9442C43.8053 17.9643 43.9298 18.0425 44.029 18.1006C44.3149 18.2682 45.1081 18.5923 45.9935 18.9453C46.8028 19.2738 46.8097 19.6448 46.812 19.9286C46.812 20.2951 46.5745 20.6057 46.2425 20.7286C46.1848 20.7532 46.1226 20.7777 46.0534 20.7956C45.952 20.8157 45.6983 20.8738 45.3317 20.8761C45.1911 20.8783 45.0066 20.8738 44.8014 20.8425C44.3725 20.7777 43.8237 20.6101 43.2312 20.2124C42.8415 19.98 42.7262 20.2727 42.6939 20.5587C42.6847 20.6772 42.6593 21.0548 42.7008 21.3208C42.7354 21.5666 42.8461 21.866 43.2196 22.0448C43.6831 22.266 44.3748 22.5319 45.7629 22.5073C47.2616 22.4828 49.0278 21.7744 49.1339 19.9129C49.24 18.0515 47.8127 17.4101 46.7567 17.0504L46.759 17.0526ZM42.1982 17.8146C42.1982 17.8146 42.3365 13.1397 37.9464 13.1397C33.5562 13.1397 33.5585 17.2604 33.5585 17.761C33.5585 17.9956 33.5124 19.037 33.9067 20.0895C33.6346 20.409 33.1573 20.7822 32.4126 20.7822C31.2113 20.7822 31.2712 19.6895 31.2712 19.6895V11.5353C31.2712 11.4839 31.2712 11.4325 31.2666 11.3811V10.9789C31.2666 9.7364 30.6256 9.78556 29.2399 9.78556V19.7051C29.2399 19.8325 29.3252 20.7956 28.0524 20.7956C26.7796 20.7956 26.7865 19.7856 26.7865 19.7051C26.7865 19.6247 26.7819 14.3733 26.7796 14.3554C26.7358 13.247 26.1063 13.2627 24.799 13.2649C24.7483 13.2649 24.716 13.2649 24.716 13.2649C24.716 13.2649 24.7183 18.6414 24.7183 19.1062C24.7183 19.571 24.7367 20.7822 22.9936 20.7822C21.2504 20.7822 21.2481 19.685 21.2481 19.1286C21.2481 18.5721 21.2481 14.8604 21.2481 14.8604H22.235C23.3671 14.8604 23.3256 14.4582 23.3256 13.2627H21.2504V11.0079C21.2504 9.94869 20.7939 9.81014 19.8186 9.79226H19.1822V13.2671L15.2901 13.2604C15.1287 13.2627 14.9557 13.2694 14.769 13.2828C14.1787 13.3409 13.706 13.4705 13.3279 13.6425C13.3117 13.6492 13.2956 13.6582 13.2794 13.6627C13.2794 13.6627 13.2794 13.6627 13.2748 13.6649C12.3917 14.0448 11.7738 14.9006 11.7738 15.8995C11.7738 16.7509 12.2234 17.4995 12.9013 17.9397C12.9359 17.9599 13.0604 18.0381 13.1595 18.0962C13.4455 18.2638 14.2386 18.5856 15.124 18.9409C15.9334 19.2694 15.9403 19.6403 15.9426 19.9219C15.9426 20.2884 15.7051 20.599 15.3731 20.7241C15.3154 20.7487 15.2532 20.7733 15.184 20.7911C15.0825 20.8113 14.8312 20.8694 14.4646 20.8716C14.3263 20.8738 14.1418 20.8694 13.9366 20.8381C13.5077 20.7733 12.9589 20.6057 12.3641 20.2079C11.9744 19.9755 11.8591 20.2682 11.8268 20.5565C11.8153 20.6749 11.7945 21.0548 11.8337 21.3185C11.8706 21.5643 11.979 21.866 12.3525 22.0448C12.816 22.266 13.5077 22.5319 14.8981 22.5073C16.3945 22.4805 18.163 21.7744 18.2691 19.9152C18.3752 18.0537 16.9479 17.4101 15.8919 17.0526C15.8919 17.0526 15.3223 16.847 15.1194 16.7576C14.8935 16.6571 14.1303 16.4381 14.0842 15.8079C14.0403 15.2046 14.5384 14.8805 15.2855 14.8559C18.3682 14.8559 18.7902 14.8559 19.1845 14.8559V19.4839C19.1845 19.7252 19.1845 20.0962 19.256 20.4984V20.5006C19.2583 20.5185 19.2606 20.5319 19.2652 20.5476C19.2675 20.561 19.2698 20.5699 19.2744 20.5811C19.2767 20.5967 19.2813 20.6146 19.2859 20.6302C19.2882 20.6392 19.2905 20.6504 19.2952 20.6615C19.2975 20.6794 19.3044 20.6973 19.309 20.7152C19.3113 20.7241 19.3159 20.7353 19.3182 20.7442C19.3251 20.7621 19.332 20.7822 19.3367 20.8001C19.339 20.809 19.3436 20.818 19.3459 20.8291C19.3528 20.847 19.3597 20.8694 19.3689 20.8895C19.3689 20.8984 19.3735 20.9051 19.3759 20.9118C19.3828 20.9342 19.392 20.9565 19.4012 20.9766C19.4012 20.9833 19.4058 20.99 19.4081 20.9967C19.4174 21.0191 19.4289 21.0414 19.4381 21.066C19.4381 21.0705 19.4427 21.0749 19.445 21.0794C19.4566 21.104 19.4681 21.1286 19.4773 21.1509C19.4819 21.1554 19.4842 21.1599 19.4842 21.1643C19.4981 21.1889 19.5096 21.2135 19.5234 21.2358C19.5234 21.2381 19.5257 21.2425 19.5303 21.247C19.5442 21.2716 19.558 21.2962 19.5742 21.3208C19.5742 21.323 19.5765 21.3252 19.5788 21.3297C19.5949 21.3543 19.6133 21.3789 19.6272 21.4034C19.6295 21.4057 19.6318 21.4079 19.6318 21.4101C19.6479 21.4347 19.6664 21.4593 19.6871 21.4839C19.6871 21.4839 19.6871 21.4861 19.6894 21.4884C19.7102 21.5129 19.7309 21.5397 19.7517 21.5643C19.7517 21.5666 19.7517 21.5666 19.7517 21.5666C19.7748 21.5934 19.7978 21.618 19.8186 21.6448C19.8186 21.6448 19.8186 21.6448 19.8209 21.6448C19.8416 21.6716 19.867 21.6939 19.8923 21.7185C20.3443 22.1632 21.0821 22.4939 22.2788 22.4939C23.9297 22.4939 24.8174 21.5934 24.9973 21.39C25.0019 21.3856 25.0042 21.3833 25.0065 21.3789C25.0088 21.3789 25.0111 21.3744 25.0111 21.3744C25.0249 21.3587 25.0319 21.3498 25.0365 21.3453V21.3498C25.0365 21.3543 25.0411 21.361 25.0434 21.3677C25.078 21.4548 25.2417 21.8302 25.7351 22.1163C26.1202 22.3532 26.6643 22.514 27.4298 22.514C28.864 22.514 29.6226 21.714 29.7517 21.5621C30.1483 22.0761 30.8654 22.4962 32.1659 22.4962C33.7453 22.4962 34.5754 21.6113 34.716 21.4481C34.7206 21.4414 34.7276 21.4347 34.7368 21.428C35.3662 22.0738 36.3301 22.5498 37.8034 22.5654C42.3827 22.6168 42.1913 17.8101 42.1913 17.8101L42.1982 17.8146ZM25.7605 12.0783C25.0688 12.0783 24.5062 11.5353 24.5062 10.8604C24.5062 10.1856 25.0665 9.64478 25.7605 9.64478C26.4545 9.64478 27.0171 10.1878 27.0171 10.8604C27.0171 11.533 26.4545 12.0783 25.7605 12.0783ZM10.9714 20.2727C10.9114 19.9911 10.7662 19.7073 10.4019 19.98C9.8554 20.4291 9.332 20.6504 8.91466 20.7576C8.65872 20.8046 8.34514 20.8314 7.95546 20.8202C5.84109 20.7599 5.61282 18.9498 5.61282 18.9498C10.976 19.8124 10.863 16.0627 10.863 16.0627C10.863 16.0627 10.916 13.3833 7.87015 13.2716C3.33243 13.1442 3.22175 17.7364 3.22175 17.7364C3.22175 17.7364 2.94276 22.4046 7.76178 22.5386C7.76178 22.5386 9.30433 22.5587 10.4733 21.8951C10.5702 21.8414 10.7362 21.7096 10.7362 21.7096C10.9783 21.504 11.0359 21.247 11.0452 21.0325C11.059 20.7666 10.9968 20.3934 10.9714 20.2749V20.2727Z' fill='%23E10020'/%3E%3Cpath id='Vector_3' d='M6.88648 8.53851H4.35938V8.97427H5.41772V11.6536H5.83275V8.97427H6.88648V8.53851ZM7.92868 9.39662C7.78111 9.31617 7.6174 9.27594 7.43755 9.27594C7.27154 9.27594 7.11705 9.3117 6.97871 9.38321C6.83806 9.45472 6.72508 9.55304 6.63746 9.68041L6.9764 9.93516C7.02482 9.86589 7.08939 9.81226 7.17009 9.77203C7.25079 9.73181 7.34071 9.7117 7.43986 9.7117C7.59896 9.7117 7.72808 9.75863 7.83184 9.85025C7.9356 9.94187 7.98632 10.0603 7.98632 10.2011V10.2681C7.82723 10.1854 7.66121 10.143 7.48136 10.143C7.30151 10.143 7.15625 10.1765 7.0156 10.2458C6.87495 10.3151 6.76197 10.4067 6.68127 10.5251C6.59826 10.6435 6.55906 10.7754 6.55906 10.9162C6.55906 11.0569 6.60057 11.1888 6.68127 11.3072C6.76427 11.4257 6.87495 11.5195 7.0156 11.5866C7.15625 11.6558 7.31304 11.6894 7.48136 11.6894C7.66813 11.6894 7.83645 11.6469 7.98632 11.5642V11.6491H8.40136V10.1988C8.40136 10.0245 8.35986 9.86589 8.27685 9.72511C8.19384 9.58432 8.07855 9.47259 7.93098 9.39438L7.92868 9.39662ZM7.83645 11.1597C7.7373 11.2245 7.61971 11.2581 7.48136 11.2581C7.34302 11.2581 7.22081 11.2245 7.12167 11.1575C7.02252 11.0905 6.9741 11.0123 6.9741 10.9184C6.9741 10.8245 7.02252 10.7463 7.12167 10.6793C7.22081 10.6123 7.34071 10.5787 7.48136 10.5787C7.62201 10.5787 7.7373 10.6123 7.83645 10.6771C7.9356 10.7419 7.98402 10.8223 7.98402 10.9184C7.98402 11.0145 7.9356 11.0927 7.83645 11.1597ZM10.6748 9.67371C10.578 9.54857 10.4627 9.45248 10.3267 9.38321C10.1906 9.31393 10.0477 9.27818 9.89549 9.27818C9.67183 9.27818 9.47353 9.34969 9.2983 9.4927V9.3184H8.88326V11.6536H9.2983V10.4022C9.2983 10.2748 9.32366 10.1586 9.37669 10.0536C9.42972 9.94857 9.5012 9.86589 9.59343 9.80332C9.68566 9.74298 9.78712 9.7117 9.89549 9.7117C9.9831 9.7117 10.0661 9.73181 10.1445 9.77203C10.2229 9.81226 10.2921 9.86812 10.3474 9.9441L10.6725 9.67371H10.6748ZM11.0945 11.6447C11.0945 11.7653 11.0576 11.8681 10.9838 11.9486C10.91 12.029 10.8201 12.0715 10.7117 12.0715C10.6356 12.0715 10.5665 12.0514 10.5042 12.0089L10.2713 12.3687C10.4074 12.4603 10.5526 12.5072 10.7117 12.5072C10.8593 12.5072 10.993 12.4692 11.1129 12.3933C11.2351 12.3173 11.3297 12.2145 11.4011 12.0826C11.4726 11.9508 11.5072 11.8056 11.5072 11.6447V9.31617H11.0922V11.6447H11.0945ZM11.302 8.49829C11.2305 8.49829 11.1706 8.52511 11.1221 8.5765C11.0737 8.6279 11.0484 8.69047 11.0484 8.76198C11.0484 8.83349 11.0737 8.89829 11.1221 8.95192C11.1706 9.00332 11.2305 9.03013 11.302 9.03013C11.3735 9.03013 11.4311 9.00332 11.4795 8.95192C11.528 8.90053 11.551 8.83796 11.551 8.76198C11.551 8.686 11.528 8.63014 11.4795 8.5765C11.4311 8.52511 11.3712 8.49829 11.302 8.49829ZM13.4763 9.4346C13.3172 9.32958 13.1397 9.27594 12.946 9.27594C12.7523 9.27594 12.5748 9.32958 12.4134 9.4346C12.2543 9.53963 12.1275 9.68488 12.0375 9.87036C11.9453 10.0558 11.8992 10.2614 11.8992 10.4871C11.8992 10.7128 11.9476 10.9139 12.0421 11.0972C12.139 11.2804 12.2681 11.4257 12.4341 11.5329C12.6001 11.6402 12.78 11.6938 12.9783 11.6938C13.1328 11.6938 13.2803 11.6603 13.4164 11.5933C13.5524 11.5262 13.6746 11.4301 13.7784 11.3072L13.4602 11.0234C13.3979 11.1016 13.3264 11.1597 13.2434 11.2C13.1604 11.2402 13.0728 11.2603 12.976 11.2603C12.8215 11.2603 12.6854 11.2089 12.5702 11.1061C12.4549 11.0033 12.3765 10.8715 12.3373 10.7083H13.9882V10.4894C13.9882 10.2637 13.9421 10.0581 13.8499 9.87259C13.7576 9.68712 13.6331 9.54187 13.474 9.43684L13.4763 9.4346ZM12.3396 10.2681C12.3742 10.1072 12.4433 9.97539 12.5494 9.87036C12.6555 9.76533 12.7869 9.7117 12.946 9.7117C13.1051 9.7117 13.2342 9.7631 13.3403 9.86812C13.444 9.97092 13.5155 10.105 13.5524 10.2681H12.3419H12.3396ZM15.3878 11.2558C15.284 11.2558 15.1964 11.2156 15.1272 11.1329C15.0581 11.0525 15.0235 10.9497 15.0235 10.829V9.74745H15.6161V9.3117H15.0235V8.53628H14.6084V9.3117H14.2234V9.74745H14.6084V10.829C14.6084 10.9899 14.643 11.1352 14.7122 11.267C14.7814 11.3988 14.8759 11.5039 14.9935 11.5776C15.1111 11.6536 15.2425 11.6916 15.3878 11.6916C15.5469 11.6916 15.6898 11.6447 15.819 11.5486L15.5815 11.1933C15.5238 11.2357 15.4593 11.2558 15.3878 11.2558ZM17.7696 9.72734C17.6866 9.58656 17.5713 9.47483 17.4238 9.39662C17.2762 9.31617 17.1125 9.27594 16.9326 9.27594C16.7666 9.27594 16.6121 9.3117 16.4738 9.38321C16.3331 9.45472 16.2202 9.55304 16.1325 9.68041L16.4715 9.93516C16.5199 9.86589 16.5845 9.81226 16.6652 9.77203C16.7459 9.73181 16.8358 9.7117 16.9349 9.7117C17.094 9.7117 17.2232 9.75863 17.3269 9.85025C17.4307 9.94187 17.4814 10.0603 17.4814 10.2011V10.2681C17.3223 10.1854 17.1563 10.143 16.9765 10.143C16.7966 10.143 16.6513 10.1765 16.5107 10.2458C16.37 10.3151 16.2571 10.4067 16.1764 10.5251C16.0933 10.6435 16.0542 10.7754 16.0542 10.9162C16.0542 11.0569 16.0957 11.1888 16.1764 11.3072C16.2594 11.4257 16.37 11.5195 16.5107 11.5866C16.6513 11.6558 16.8081 11.6894 16.9765 11.6894C17.1632 11.6894 17.3315 11.6469 17.4814 11.5642V11.6491H17.8964V10.1988C17.8964 10.0245 17.8549 9.86589 17.7719 9.72511L17.7696 9.72734ZM17.3315 11.1575C17.2324 11.2223 17.1148 11.2558 16.9765 11.2558C16.8381 11.2558 16.7159 11.2223 16.6168 11.1553C16.5176 11.0882 16.4692 11.01 16.4692 10.9162C16.4692 10.8223 16.5176 10.7441 16.6168 10.6771C16.7159 10.61 16.8358 10.5765 16.9765 10.5765C17.1171 10.5765 17.2324 10.61 17.3315 10.6748C17.4307 10.7396 17.4791 10.8201 17.4791 10.9162C17.4791 11.0123 17.4307 11.0905 17.3315 11.1575Z' fill='%235E5F61'/%3E%3C/g%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1690_26294' x1='0.189072' y1='1.45698' x2='51.3476' y2='31.9335' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BD9836'/%3E%3Cstop offset='0.34' stop-color='%23D5B85F'/%3E%3Cstop offset='0.51' stop-color='%23E3CA77'/%3E%3Cstop offset='0.53' stop-color='%23E2C974'/%3E%3Cstop offset='0.61' stop-color='%23E1C96E'/%3E%3Cstop offset='0.66' stop-color='%23D9BF62'/%3E%3Cstop offset='0.79' stop-color='%23C9A94A'/%3E%3Cstop offset='0.9' stop-color='%23C09C3B'/%3E%3Cstop offset='1' stop-color='%23BD9836'/%3E%3C/linearGradient%3E%3CclipPath id='clip0_1690_26294'%3E%3Crect width='52.3636' height='32' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: round;
+  background-size  : cover;
+  opacity          : 1;
+}
+
+p.card-flags.active {
+  margin: 4px 0 !important;
+}
+
+.payment-group-item-text {
+  color      : #3A3333;
+  font-size  : 16px;
+  font-style : normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*END Payment section*/
+
+/* Addres edit section*/
+
+.icon-edit:before {
+  font-size: 0;
+}
+
+i.icon-edit:after {
+  background-image : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 19 19' fill='none'%3E%3Cpath d='M16.85 5.34987L13.65 2.14987L14.7 1.09987C14.9833 0.816536 15.3375 0.679036 15.7625 0.687369C16.1875 0.695702 16.5417 0.841536 16.825 1.12487L17.9 2.19987C18.1833 2.4832 18.325 2.8332 18.325 3.24987C18.325 3.66654 18.1833 4.01654 17.9 4.29987L16.85 5.34987ZM0.75 18.9999C0.533333 18.9999 0.354167 18.929 0.2125 18.7874C0.0708333 18.6457 0 18.4665 0 18.2499V16.0999C0 15.9999 0.0166667 15.9082 0.05 15.8249C0.0833333 15.7415 0.141667 15.6582 0.225 15.5749L12.6 3.19987L15.8 6.39987L3.425 18.7749C3.34167 18.8582 3.25833 18.9165 3.175 18.9499C3.09167 18.9832 3 18.9999 2.9 18.9999H0.75Z' fill='%23E91111'/%3E%3C/svg%3E") !important;
+  background-size  : contain;
+  content          : "pe";
+  font-size        : 1rem;
+  color            : transparent;
+  background-repeat: no-repeat;
+}
+
+.vtex-omnishipping-1-x-addressItemOption .icon-edit {
+  display: none;
+}
+
+.vtex-omnishipping-1-x-addressItemOption.vtex-omnishipping-1-x-active .icon-edit {
+  display: inline-flex;
+}
+
+button#edit-address-button {
+  display: none;
+}
+
+p.link.create.address-create {
+  margin-top: 2rem;
+}
+
+button.vtex-omnishipping-1-x-buttonCreateAddress,
+.omnishipping-1-x-buttonCreateAddress:hover {
+  font-size    : 0;
+  border       : 1px solid #E91111;
+  color        : #E91111;
+  border-radius: 50px;
+  padding      : 0.6rem;
+  width        : 100%;
+  max-width    : 288px;
+  margin       : 0 auto;
+}
+
+button.vtex-omnishipping-1-x-buttonCreateAddress:after {
+  content       : "AÑADIR DIRECCIÓN";
+  font-size     : 1rem;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.vtex-omnishipping-1-x-deliveryGroup p.vtex-omnishipping-1-x-shippingSectionTitle {
+  font-size     : 0px;
+  display       : flex;
+  flex-direction: column;
+}
+
+.vtex-omnishipping-1-x-deliveryGroup p.vtex-omnishipping-1-x-shippingSectionTitle:before {
+  content  : "Tipo de envio";
+  font-size: 21px;
+}
+
+.vtex-omnishipping-1-x-deliveryGroup p.vtex-omnishipping-1-x-shippingSectionTitle:after {
+  content   : "Selecciona el método de envío";
+  font-size : 16px;
+  margin-top: 1rem;
+}
+
+p.vtex-omnishipping-1-x-submitPaymentButton.btn-submit-wrapper.btn-go-to-payment-wrapper {
+  margin-top: 2rem !important;
+}
+
+@media screen and (min-width: 768px) {
+
+  .vtex-omnishipping-1-x-addressItemIcon.shp-option-icon,
+  .vtex-omnishipping-1-x-addressItemOption.vtex-omnishipping-1-x-active .icon-edit {
+    height: 90%;
+  }
+
+  .address-list.vtex-omnishipping-1-x-addressList {
+    display  : flex;
+    flex-wrap: wrap;
+  }
+
+  label.address-item.vtex-omnishipping-1-x-addressItemOption.vtex-omnishipping-1-x-active {
+    width : 40%;
+    margin: 10px;
+  }
+
+  label.address-item.vtex-omnishipping-1-x-addressItemOption {
+    width     : 40%;
+    margin    : 10px;
+    border    : unset;
+    box-shadow: unset;
+  }
+
+  p.link.create.address-create {
+    width: 100%;
+  }
+}
+
+/*END Addres edit section*/
+
+/* Shipping info section*/
+
+select#ship-state,
+select#ship-city,
+select#ship-neighborhood {
+  max-width: 100% !important;
+}
+
+p.input.ship-state.required.text,
+p.input.ship-city.required.text,
+p.input.ship-neighborhood.required.text {
+  margin-bottom: 1.3rem;
+}
+
+p.input.ship-state.required.text label,
+p.input.ship-city.required.text label,
+p.input.ship-neighborhood.required.text label,
+.ship-number label,
+.ship-complement label,
+.ship-reference label,
+.ship-receiverName label,
+.ship-street label {
+  color         : #767676;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+}
+
+div#delivery-packages-options {
+  margin-bottom : 0.6rem;
+  color         : #767676;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+}
+
+
+p.vtex-omnishipping-1-x-shippingSectionTitle.delivery-address-title,
+.vtex-omnishipping-1-x-addressSummary.vtex-omnishipping-1-x-addressSummaryActive {
+  display: none;
+}
+
+p.input.ship-number.required.text {
+  float: unset;
+}
+
+.ship-reference {
+  display: block !important;
+}
+
+.contenedorCheckbox {
+  display        : flex;
+  margin-bottom  : 1rem;
+  margin-top     : 1rem;
+  justify-content: center;
+  align-items    : center;
+}
+
+.contenedorCheckbox label {
+  color               : #5A5A5A;
+  font-size           : 16px;
+  font-style          : normal;
+  font-weight         : 400;
+  line-height         : normal;
+  letter-spacing      : 0.5px;
+  text-decoration-line: underline;
+}
+
+.documentType {
+  display: flex;
+}
+
+.documentTypeSelect {
+  width       : 30%;
+  margin-right: .5em;
+}
+
+.documentTypeNumber {
+  width: calc(100% - 5px);
+}
+
+@media (min-width: 48rem) {
+  /* .client-data-new {
+    display              : grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows   : repeat(4, 1fr);
+    gap                  : 12px
+  } */
+
+  .contenedorCheckbox {
+    display        : flex;
+    justify-content: flex-start;
+  }
+
+  .client-pre-email .client-email.input.text .btn-success {
+    bottom: 45% !important;
+  }
+}
+
+/*------Summary Products section -------*/
+
+.summaryTitleContainer {
+  margin-bottom: 2rem;
+}
+
+.titleSummary {
+  font-size  : 21px;
+  font-style : bold;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.subtitleSummary {
+  color      : #767676;
+  font-size  : 18px;
+  font-style : normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.summary-template-holder .summary-coupon p.coupon-fields .delete {
+  position: absolute;
+  top     : 0;
+  right   : 0;
+}
+
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset>div {
+  display    : flex;
+  align-items: flex-start;
+}
+
+.summary-template-holder .summary-coupon p.coupon-fields span.info>span {
+  margin        : 0 .75rem 0 0;
+  color         : var(--primary, #E91111);
+  font-size     : 14px;
+  font-weight   : 500;
+  text-transform: uppercase;
+}
+
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset {
+  margin: .5rem 0;
+}
+
+.summary-template-holder .summary-coupon p.coupon-fields span {
+  flex-direction: column !important;
+  gap           : 12px
+}
+
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset>div[style*="none"] p.coupon-label {
+  display: flex !important;
+}
+
+/* .summary-template-holder .summary-coupon fieldset.coupon-fieldset p label {
+  font-size: 0px;
+} */
+
+/* .summary-template-holder .summary-coupon fieldset.coupon-fieldset p label::after {
+  content       : "Ingresa el código de descuento" !important;
+  color         : #5A5A5A;
+  text-align    : center;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 500;
+  line-height   : normal;
+  letter-spacing: 0.32px;
+} */
+
+.btn-secondary,
+.table.cart-items tbody tr td.product-name .add-service.btn,
+.table.cart-items tbody tr td.product-name .summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data a.add-service,
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data .table.cart-items tbody tr td.product-name a.add-service,
+.table.cart-items tbody tr td.product-name .clone-item.btn,
+.table.cart-items tbody tr td.product-name .summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data a.clone-item,
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data .table.cart-items tbody tr td.product-name a.clone-item,
+.table.cart-items tbody tr td.product-name .add-item-attachment-container a,
+.table.cart-items tbody tr td .product-service input[type=submit],
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset button[type="submit"],
+.cart-more-options .srp-container .vtex-shipping-preview-0-x-pc .btn,
+.cart-more-options .srp-container .vtex-shipping-preview-0-x-pc .summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data a,
+.summary-template-holder .summary-coupon fieldset.coupon-fieldset .coupon-data .cart-more-options .srp-container .vtex-shipping-preview-0-x-pc a,
+.orderform-template-holder #payment-data .payment-discounts-list table td.action a,
+.orderform-template-holder #payment-data #btn-add-gift-card {
+  color         : #E91111;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 700;
+  line-height   : normal;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+}
+
+.totalizers-list td {
+  color         : #5A5A5A !important;
+  font-size     : 16px !important;
+  font-style    : normal !important;
+  font-weight   : 200 !important;
+  line-height   : normal !important;
+  letter-spacing: 0.5px !important;
+}
+
+.summary-template-holder tfoot tr td {
+  color      : #5A5A5A;
+  font-size  : 18px;
+  font-style : normal;
+  font-weight: bold !important;
+  line-height: normal;
+}
+
+a#cart-to-orderform {
+  border-radius : 50px;
+  background    : #E91111 !important;
+  text-transform: uppercase !important;
+  border-color  : #E91111;
+}
+
+.custom-cart-template-wrap .orderform-template .orderform-template .cart-template.mini-cart .summary-template-holder .summary>.summary-coupon-wrap,
+.orderform-template .cart-template.mini-cart .summary-template-holder .summary-coupon-wrap>.summary-coupon {
+  display   : none !important;
+  border-top: none;
+}
+
+
+.custom-cart-template-wrap {
+  background: #F5F5F5 !important;
+}
+
+.orderform-template .cart-template.mini-cart .item .item-price,
+.orderform-template .cart-template.mini-cart .item .item-price-subtotal,
+.orderform-template .cart-template.mini-cart .item .price-subtotal,
+.orderform-template .cart-template.mini-cart .item .price {
+  font-size  : 16px;
+  font-family: 'Outfit';
+  font-weight: 100;
+}
+
+.orderform-template .cart-template.mini-cart .item {
+  border-bottom: unset;
+}
+
+@media screen and (min-width: 768px) {
+  .cart-items img.photo {
+    width       : 72px;
+    aspect-ratio: auto 72 / 72;
+  }
+}
+
+.orderform-template .cart-template.mini-cart .item .fn {
+  width: calc(82% - 10px);
+}
+
+.cart-items .product-name {
+  font-size  : 15px;
+  font-family: 'Outfit';
+  font-weight: 100;
+}
+
+.mini-cart .item .url .photo {
+  width: 72px;
+}
+
+.orderform-template .cart-template.mini-cart .item {
+  display              : grid;
+  grid-template-columns: auto 1fr;
+}
+
+.mini-cart .url {
+  grid-column: 1;
+  grid-row   : 1 / 4;
+  display    : flex;
+  align-items: center;
+}
+
+.orderform-template .cart-template.mini-cart .item .fn {
+  grid-column: 2;
+}
+
+.orderform-template .cart-template.mini-cart .item .description {
+  grid-column   : 2;
+  flex-direction: row-reverse;
+}
+
+
+/*resumen cart*/
+@media screen and (min-width: 768px) {
+
+  .orderform-template .cart-template.mini-cart,
+  .summary-template-holder {
+    max-width: 320px;
+  }
+}
+
+.orderform-template .custom-cart-template-wrap {
+  padding: 0px;
+}
+
+.containerShareCartAll {
+  background: #fff !important;
+}
+
+.summary-template-holder {
+  padding: 0;
+}
+
+.span5.totalizers.summary-totalizers.cart-totalizers.pull-right {
+  padding-top  : 17px !important;
+  padding-left : 17px !important;
+  padding-right: 17px !important;
+}
+
+.forms.coupon-column.summary-coupon-wrap.span7.pull-left,
+span.link-choose-more-products-wrapper,
+span.link-print-cart-wrapper,
+span.btn-place-order-wrapper,
+.summaryTemplateHolder--content {
+  padding: 0px 17px !important;
+}
+
+.containerShareCartAll,
+.orderform-template .cart-template.mini-cart h2.titleShareCart {
+  background-color: #fff !important;
+  text-align      : center;
+}
+
+.cart-template .cart-template.mini-cart h2,
+.orderform-template .cart-template.mini-cart h2,
+.summary-cart-template-holder,
+.orderform-template .cart-template.mini-cart .summary-template-holder,
+.orderform-template .payment-confirmation-wrap {
+  padding   : 17px !important;
+  background: #F5F5F5 !important;
+}
+
+.orderform-template .cart-template.mini-cart .summary-template-holder {
+  border-top-left-radius : 0px;
+  border-top-right-radius: 0px;
+}
+
+
+.orderform-template .cart-template.mini-cart h2 {
+  padding-bottom: 17px !important;
+  margin-bottom : 0px;
+}
+
+/*END resumen cart*/
+
+.orderform-template .cart-template.mini-cart .summary-template-holder .summary>.summary-coupon-wrap {
+  border-top: none;
+}
+
+/* Custom payment button */
+
+#payment-data-submit-custom {
+  position: absolute;
+  top: 0;
+  height: 48px;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#payment-data-submit-custom span {
+  font-size: 14px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* End Custom payment button */
+
+.contenedorNombre label,
+.documentType label,
+.contenedorTelefono label,
+.contenedorEmail label {
+  color         : #767676;
+  font-size     : 16px;
+  font-style    : normal;
+  font-weight   : 400;
+  line-height   : normal;
+  letter-spacing: 0.5px;
+}
+
+.contenedorNombre {
+  margin-top   : 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contenedorNombre,
+.documentType,
+.contenedorTelefono,
+.contenedorEmail {
+  margin-top   : 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/*Title Summary Products*/
+@media screen and (min-width: 43.1rem) {
+  /* .table.cart-items tbody tr .v-custom-product-item-wrap {
+    display        : flex;
+    justify-content: flex-start;
+  } */
+
+  .table.cart-items thead tr th.product,
+  .table.cart-items thead tr th.product-price,
+  .table.cart-items thead tr th.quantity {
+    color       : #3A3333;
+    font-size   : 16px;
+    font-style  : normal;
+    font-weight : 400;
+    line-height : normal;
+  }
+
+  .table.cart-items thead tr th.product {
+    width: 55% !important;
+  }
+
+  .table.cart-items thead tr {
+    margin         : 0 100px 0 130px;
+    display        : flex;
+    justify-content: flex-start;
+  }
+
+  .table.cart-items td.product-name a {
+    display      : block;
+    width        : 220px;
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    font-weight  : 400;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width          : 15% !important;
+    max-width      : 122px;
+    display        : flex;
+    justify-content: flex-start;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width          : 25% !important;
+    max-width      : 122px;
+    display        : flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .table.cart-items thead tr {
+    margin: 0 120px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product {
+    width: 45% !important;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width          : 15% !important;
+    justify-content: center;
+    margin         : 0 1rem;
+    padding        : 0;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width          : 22% !important;
+    justify-content: center;
+    margin         : 0 1rem;
+    padding        : 0;
+  }
+}
+
+@media screen and (min-width: 51rem) {
+  .table.cart-items thead tr {
+    margin: 0 130px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width : 12% !important;
+    margin: 0 .5rem;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    margin: 0 .5rem;
+
+  }
+}
+
+@media screen and (min-width: 56.8rem) {
+  .table.cart-items thead tr {
+    margin: 0 170px 0 130px;
+  }
+}
+
+@media screen and (min-width: 62.4rem) {
+  .table.cart-items thead tr {
+    margin: 0 100px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product {
+    width: 50% !important;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width : 18% !important;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .table.cart-items thead tr {
+    margin: 0 90px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product,
+  .table.cart-items thead tr th.product-price,
+  .table.cart-items thead tr th.quantity {
+    color       : #3A3333;
+    leading-trim: both;
+    text-edge   : cap;
+    font-size   : 20px;
+    font-style  : normal;
+    font-weight : 400;
+    line-height : normal;
+  }
+
+  .table.cart-items thead tr th.product {
+    width: 48% !important;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width: 30% !important;
+  }
+}
+
+@media screen and (min-width: 65.6rem) {
+  .table.cart-items thead tr {
+    margin: 0 100px 0 130px;
+  }
+}
+
+@media screen and (min-width: 68.7rem) {
+  .table.cart-items thead tr {
+    margin: 0 180px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width: 12% !important;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width: 23% !important;
+  }
+}
+
+@media screen and (min-width: 70.3rem) {
+  .table.cart-items thead tr th.product {
+    width: 46% !important;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width: 23% !important;
+  }
+
+  .table.cart-items thead tr {
+    margin: 0 98px 0 130px;
+  }
+}
+
+@media screen and (min-width: 73.7rem) {
+  .table.cart-items thead tr {
+    margin: 0 115px 0 130px;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .table.cart-items thead tr {
+    margin: 0 125px 0 130px;
+  }
+
+  .table.cart-items thead tr th.product {
+    width: 46% !important;
+  }
+
+  .table.cart-items thead tr th.product-price {
+    width: 12% !important;
+  }
+
+  .table.cart-items thead tr th.quantity {
+    width: 23% !important;
+  }
+
+  .table.cart-items thead tr {
+    margin: 0 90px 0 130px;
+  }
+}
+
+/*END Title Summary Products*/
+
+/*Title summary*/
+.summary-title-cont {
+  display: flex;
+}
+
+.summary-title-text {
+  color      : #3A3333;
+  font-size  : 21px;
+  font-style : normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Address Summary Another Client*/
+
+@media (min-width: 1000px) {
+  .contenedorDatosCliente{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+/* END Address Summary Another Client*/
+
+/* Shipping address styles*/
+.vtex-omnishipping-1-x-deliveryChannelsToggle{
+  background: #E91111 !important;
+  border: solid 1px #E91111 !important;
+}
+/*END Shipping address styles*/
+.payment-submit-wrap {
+  position: relative;
+}
+
+/* Loader for the promotions load */
+.loader-promotions {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+}

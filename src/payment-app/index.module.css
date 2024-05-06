@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
+
+.modal-background {
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+}
+
+.wrapper {
+  font-family: Outfit;
+  position: absolute;
+  width: 328px;
+  height: 600px;
+  left: calc(50% - 328px/2);
+  top: calc(40% - 600px/2 - 0.5px);
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(32, 35, 55, 0.16);
+  border-radius: 8px;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.appPayload {
+  width: 100%;
+  word-break: break-word;
+}
+
+.wrapper .body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  overflow-y: scroll;
+  height: calc(600px - 242px);
+}
+
+.wrapper label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.wrapper .body::-webkit-scrollbar, form::-webkit-scrollbar  {
+  width: 8px;     /* Tamaño del scroll en vertical */
+  height: 8px;    /* Tamaño del scroll en horizontal */
+  display: none;  /* Ocultar scroll */
+}
+
+.wrapper button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  width: 264px;
+  height: 40px;
+  left: calc(50% - 264px/2);
+  background: #FFFFFF;
+  border: 1px solid var(--primary-color);
+  border-radius: 50px;
+
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+button[data-style="simple"] {
+  border: none;
+}
+
+button[data-style="primary"] {
+  border: none;
+  color: #FFFFFF;
+  background: var(--primary-color);
+}
+
+.wrapper .simple-button:disabled {
+  color: #ccc;
+  border: 1px solid #ccc;
+  cursor: default;
+}
+
+.wrapper button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.header-paymentapp {
+  height: 80px;
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+}
+
+.footer-paymentapp {
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-paymentapp p {
+  color: #5A5A5A;
+  font-size: 18px;
+  font-family: Outfit;
+}
+
+/*
+  ##Device = Laptops, Desktops
+*/
+@media (min-width: 1025px) {
+
+  .wrapper {
+    width: 612px;
+    left: calc(50% - 612px/2);
+  }
+
+  .wrapper .simulation-fullscreen {
+    flex-direction: row;
+    align-items: flex-start;
+    overflow: hidden;
+  }
+
+  .wrapper .simulation-fullscreen form {
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(600px - 212px);
+    padding-bottom: 0.5rem;
+  }
+
+}
