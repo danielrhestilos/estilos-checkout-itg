@@ -403,7 +403,7 @@ const PaymentForm: FC<Props> = () => {
           </main>
           <footer className={styles['footer-paymentapp']}>
             {orderForm ? <p className={styles['checkout-total-installments']} >Total al contado: {currencyFormatter.format(orderForm?.value / 100)}</p> : <></>}
-            {( mainTotal != 0 && simulation && paymentType!='' && paymentType!='1') ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(mainTotal)}</p> : <></>}
+            {( mainTotal != 0 && simulation && paymentType!='') ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(mainTotal)}</p> : <></>}
             <button disabled={!canEnablePayment() || loadingPromotions} data-style="primary" onClick={confirmPayment}>
               Confirmar
             </button>
