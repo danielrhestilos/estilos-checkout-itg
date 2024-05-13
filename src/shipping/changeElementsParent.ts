@@ -1,4 +1,5 @@
 function moveElementsToNewParent() {
+  
   // Buscar el contenedor que tiene la clase
   const containerDiv = document.querySelector('.vtex-omnishipping-1-x-address');
   const newParentDiv = containerDiv?.querySelector('div');

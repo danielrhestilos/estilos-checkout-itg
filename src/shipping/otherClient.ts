@@ -21,33 +21,24 @@ function createDivAndElements(): void {
     // Contenedor principal
     const contenedorPrincipal = document.createElement('div')
     contenedorPrincipal.className = 'contenedorPrincipal'
-
     // Parte checkbox
     const contenedorCheck = document.createElement('div')
     contenedorCheck.className = 'contenedorCheckbox'
-
     const checkbox = document.createElement('input')
     checkbox.type = 'checkbox'
     checkbox.className = 'checkboxOtherPeople'
     checkbox.checked = loadedDataFromLocalStorage?.receivesDelivery
-
     const checkboxLabel = document.createElement('label')
-
     checkboxLabel.appendChild(checkbox)
-
     const labelText = document.createTextNode('Otra persona recibe el envío')
-
     checkboxLabel.appendChild(labelText)
-
     // Div oculto
     const hiddenDiv = document.createElement('div')
     hiddenDiv.className = 'contenedorDatosCliente'
     hiddenDiv.style.display = loadedDataFromLocalStorage?.receivesDelivery ? 'block' : 'none'
-
     // Nombre de quien recibe
     const contenedorNombre = document.createElement('div')
     contenedorNombre.className = 'contenedorNombre'
-
     const checkboxLabelWhoReceives = document.createElement('label')
     const labelTextWhoReceives = document.createTextNode('Quien recibe el envío')
     checkboxLabelWhoReceives.appendChild(labelTextWhoReceives)

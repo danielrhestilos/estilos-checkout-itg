@@ -319,7 +319,9 @@ const PaymentForm: FC<Props> = () => {
 
   useEffect(()=>{
     loadSimulation()
-  },[selectedTerm])
+    console.log('cambios en orderform');
+    
+  },[orderForm])
 
   useEffect(() => {
     document.addEventListener("loadingDiscounts", () => {
@@ -403,7 +405,8 @@ const PaymentForm: FC<Props> = () => {
           </main>
           <footer className={styles['footer-paymentapp']}>
             {orderForm ? <p className={styles['checkout-total-installments']} >Total al contado: {currencyFormatter.format(orderForm?.value / 100)}</p> : <></>}
-            {( mainTotal != 0 && simulation && paymentType!='') ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(mainTotal)}</p> : <></>}
+            {( mainTotal != 0 && simulation && paymentType!='' && paymentType!='1') ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(mainTotal)}</p> : <></>}
+            {( paymentType=='1'&& orderForm) ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(orderForm?.value / 100)}</p> : <></>}
             <button disabled={!canEnablePayment() || loadingPromotions} data-style="primary" onClick={confirmPayment}>
               Confirmar
             </button>
