@@ -1,5 +1,5 @@
 import { stringify } from 'querystring'
-import { OrderForm } from './typings/orderForm'
+import { OrderForm,Item } from './typings/orderForm'
 
 export function shuffle(array: string[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -18,8 +18,18 @@ export const isTarjetaEstilosPayment = (orderForm: OrderForm): boolean => {
   const paymentSystemData = paymentSystems.find((paymentSystemData) => paymentSystemData.id === parseInt(paymentSystem))
   if (!paymentSystemData) return false
   const { groupName } = paymentSystemData
+  // console.log("groupName : ",groupName);
   return groupName === 'TarjetaEstilosPaymentGroup'
 }
+
+export const isComboPayment = (orderForm : OrderForm):boolean => {
+  let item = orderForm.items.find ((item:Item)=>item.name.toLocaleLowerCase().startsWith("combo"))
+  if(item){
+    return true
+  }
+  return false
+}
+
 
 export const scrollToTarget = function (target: string, container = '#paymentapp-container') {
   try {

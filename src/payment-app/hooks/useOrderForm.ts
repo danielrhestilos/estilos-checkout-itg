@@ -18,7 +18,7 @@ const useOrderForm = () => {
         method: 'GET',
       })
 
-      setOrderForm(response)
+      setOrderForm(response)      
       setLoading(false)
     } catch (error) {
       console.error('Error fetching order form: ', error)
@@ -61,7 +61,8 @@ const useOrderForm = () => {
       return error
     }
   }
-
+  // console.log("orderForm : ",orderForm);
+  
   return { orderForm, loading, getOrderForm, updatePaymentOrderForm }
 }
 

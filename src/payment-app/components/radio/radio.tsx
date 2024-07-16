@@ -12,7 +12,7 @@ interface RadioGroupProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const RadioGroup: React.FC<RadioGroupProps> = ({ options, onChange }) => {
+const RadioGroup: React.FC<RadioGroupProps> = ({ options, onChange }) => { 
   const [selectedValue, setSelectedValue] = useState<string>()
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {

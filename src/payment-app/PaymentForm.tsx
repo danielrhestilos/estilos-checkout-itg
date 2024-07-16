@@ -14,7 +14,7 @@ import type { Payload } from './typings/payload'
 import styles from './index.module.css'
 import useApiRequest, { request } from './hooks/useApiRequest'
 import SimulationTable from './components/simulation/simulation-table'
-import { currencyFormatter, isTarjetaEstilosPayment, scrollToTarget } from './utils'
+import { currencyFormatter, isTarjetaEstilosPayment,scrollToTarget, isComboPayment } from './utils'
 import { OrderForm } from './typings/orderForm'
 import { LoaderContext } from './context/loader.context'
 import { useFullScreenLoader } from './hooks/fullScreenLoader'
@@ -32,7 +32,6 @@ interface Props {
 
 const PaymentForm: FC<Props> = () => {
   const { orderForm, getOrderForm, loading: loadingOrderForm, updatePaymentOrderForm } = useOrderForm()
-
   const {
     getCardInfo,
     getPaymentMethods,
@@ -77,7 +76,7 @@ const PaymentForm: FC<Props> = () => {
   }
 
   const loadOrderForm = async () => {
-    await getOrderForm()
+    await getOrderForm()    
   }
 
   const handleCardNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -236,9 +235,7 @@ const PaymentForm: FC<Props> = () => {
 
   const getCheckoutPaymentButton = () => {
     if (!!checkoutButtonRef.current) return checkoutButtonRef.current;
-
     const paymentButtons = document.querySelectorAll('#payment-data-submit')
-
     const visiblePaymentButton = Array.from(paymentButtons).find((paymentButton) => {
       return paymentButton.checkVisibility()
     }) as HTMLButtonElement
@@ -246,19 +243,18 @@ const PaymentForm: FC<Props> = () => {
     return visiblePaymentButton
   }
 
+  const getAccordion = () => {
+    const elementEstilosCard = document.querySelector("#payment-group-TarjetaEstilosPaymentGroup")
+    // console.log("elementEstilosCard ",elementEstilosCard);
+  }
+
   const getCustomCheckoutPaymentButton = () => {
     if (!!customCheckoutPaymentButton.current) return customCheckoutPaymentButton.current;
-
     const visiblePaymentButton = getCheckoutPaymentButton()
-
     if (!visiblePaymentButton) return null
-
     const buttonPaymentParent = visiblePaymentButton.parentNode
-
     if (!buttonPaymentParent) return null
-
     const paymentButton = document.createElement('button')
-
     paymentButton.id = 'payment-data-submit-custom'
     paymentButton.className = 'submit btn btn-success btn-large btn-block'
     const visibleButtonText = visiblePaymentButton.querySelector('span')
@@ -269,11 +265,8 @@ const PaymentForm: FC<Props> = () => {
       setShowModal(true)
       await loadOrderForm()
     })
-
     buttonPaymentParent.appendChild(paymentButton)
-
     customCheckoutPaymentButton.current = paymentButton
-
     return paymentButton
   }
 
@@ -298,16 +291,29 @@ const PaymentForm: FC<Props> = () => {
   }, [data, isLoading, configError])
 
   useEffect(() => {
-    window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {
+    window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {      
       /* get all payment buttons and detect what is visible */
       const visiblePaymentButton = getCheckoutPaymentButton()
-
+      
       if (!visiblePaymentButton) return
       if (!changedOrderForm) return
-
+      console.log("changedOrderForm ",changedOrderForm);
       const isTarjetaEstilos = isTarjetaEstilosPayment(changedOrderForm)
-
+      const isCombo = isComboPayment(changedOrderForm)
+      console.log(isCombo,"isCombo");
       const customCheckoutPaymentButton = getCustomCheckoutPaymentButton()
+      if(isCombo){
+        let itemsOpt = document.querySelectorAll(".v-custom-payment-item-wrap")
+        console.log('itemsOpt',itemsOpt);
+        itemsOpt.forEach((item:any,index:number)=>{
+          if(index != 0){
+            item.style.display = "none";
+          }
+        }
+        
+      )
+        // alert("TIENES UN COMBO ESTILOS EN T CARRITO, SOLO DEBES COMRPAR CON  TARJETA ESTILOS")
+      }
       if (!customCheckoutPaymentButton) return
       if (isTarjetaEstilos) {
         customCheckoutPaymentButton.style.display = 'block'
