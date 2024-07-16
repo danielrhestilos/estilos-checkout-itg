@@ -23,7 +23,7 @@ export const isTarjetaEstilosPayment = (orderForm: OrderForm): boolean => {
 }
 
 export const isComboPayment = (orderForm : OrderForm):boolean => {
-  let item = orderForm.items.find ((item:Item)=>item.name.toLocaleLowerCase().startsWith("combo"))
+  let item = orderForm.items.find ((item:Item)=>item.name.toLocaleLowerCase().startsWith("combo tarjeta"))
   if(item){
     return true
   }
