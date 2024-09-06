@@ -27,6 +27,7 @@ export const initWhoReceives = () => {
       } else {
         errorMessage.innerHTML = 'Formato incorrecto, debe ser un número de 8 dígitos.'
         errorMessage.style.display = 'block'
+        errorMessage.style.fontSize = '1rem'
         if (btnPayment) {
           btnPayment.style.display = 'none'
         }
