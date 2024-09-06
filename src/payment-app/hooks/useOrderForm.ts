@@ -61,7 +61,6 @@ const useOrderForm = () => {
       return error
     }
   }
-  // console.log("orderForm : ",orderForm);
   
   return { orderForm, loading, getOrderForm, updatePaymentOrderForm }
 }

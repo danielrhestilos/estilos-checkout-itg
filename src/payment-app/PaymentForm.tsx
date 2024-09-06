@@ -14,13 +14,13 @@ import type { Payload } from './typings/payload'
 import styles from './index.module.css'
 import useApiRequest, { request } from './hooks/useApiRequest'
 import SimulationTable from './components/simulation/simulation-table'
-import { currencyFormatter, isTarjetaEstilosPayment,scrollToTarget, isComboPayment } from './utils'
+import { currencyFormatter, isTarjetaEstilosPayment, scrollToTarget, isComboPayment } from './utils'
 import { OrderForm } from './typings/orderForm'
 import { LoaderContext } from './context/loader.context'
 import { useFullScreenLoader } from './hooks/fullScreenLoader'
 import FullScreenLoader from './components/screen-loader'
 import CardInput from './components/card-input'
-import "./discounts/discounts"
+import './discounts/discounts'
 import AlertModal from './components/alert'
 import { useModal } from './context/modal.context'
 import { loadingDiscounts, discountsLoaded } from '../custom-events'
@@ -32,17 +32,10 @@ interface Props {
 
 const PaymentForm: FC<Props> = () => {
   const { orderForm, getOrderForm, loading: loadingOrderForm, updatePaymentOrderForm } = useOrderForm()
-  const {
-    getCardInfo,
-    getPaymentMethods,
-    paymentMethods,
-    getSimulation,
-    simulation,
-    cardInfo,
-  } = useRp3()
+  const { getCardInfo, getPaymentMethods, paymentMethods, getSimulation, simulation, cardInfo } = useRp3()
 
   const { showLoader, toggleLoader, showScreenLoader, hideScreenLoader } = useFullScreenLoader()
-  const { showAlertModal, hideModal: hideAlertModal } = useModal();
+  const { showAlertModal, hideModal: hideAlertModal } = useModal()
 
   const [cardNumber, setCardNumber] = useState<string>('')
   const [paymentType, setPaymentType] = useState<string>('')
@@ -61,7 +54,7 @@ const PaymentForm: FC<Props> = () => {
 
   const { data, isLoading, error: configError } = useApiRequest<any>('/_v/api/tarjeta-estilos/getconfig', 'GET')
 
-  const [mainTotal,setMainTotal] = useState<number>(0);
+  const [mainTotal, setMainTotal] = useState<number>(0)
 
   const cancelPayment = async () => {
     setShowModal(false)
@@ -76,7 +69,7 @@ const PaymentForm: FC<Props> = () => {
   }
 
   const loadOrderForm = async () => {
-    await getOrderForm()    
+    await getOrderForm()
   }
 
   const handleCardNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -115,6 +108,7 @@ const PaymentForm: FC<Props> = () => {
         method: 'POST',
         body: {},
       })
+      // console.log('response ', response)
       if (response.status === 'error') {
         showAlertModal({
           title: 'Espera un momento',
@@ -126,12 +120,12 @@ const PaymentForm: FC<Props> = () => {
             hideAlertModal()
           },
           show: true,
-          image: headerImage
+          image: headerImage,
         })
         setValidPromotion(false)
         document.dispatchEvent(discountsLoaded)
         canEnablePayment()
-        return;
+        return
       }
       setValidPromotion(true)
       document.dispatchEvent(discountsLoaded)
@@ -170,7 +164,7 @@ const PaymentForm: FC<Props> = () => {
           cancelPayment()
         },
         show: true,
-        image: headerImage
+        image: headerImage,
       })
     }
   }
@@ -201,7 +195,7 @@ const PaymentForm: FC<Props> = () => {
   useEffect(() => {
     if (!orderForm) return
     const valid = verifyCardNumber(cardNumber)
-    console.log('valid daniel ',valid)
+    // console.log('valid daniel ', valid)
     if (valid) {
       loadCardInfo()
       loadPaymentTypes()
@@ -215,7 +209,6 @@ const PaymentForm: FC<Props> = () => {
   }
 
   const confirmPayment = () => {
-
     if (!orderForm?.paymentData.payments) return
 
     const checkoutPaymentButton = getCheckoutPaymentButton()
@@ -230,26 +223,26 @@ const PaymentForm: FC<Props> = () => {
       disableLoadDiscounts()
       checkoutPaymentButton.click()
       setShowModal(false)
-    }, 1000);
+    }, 1000)
   }
 
   const getCheckoutPaymentButton = () => {
-    if (!!checkoutButtonRef.current) return checkoutButtonRef.current;
+    if (!!checkoutButtonRef.current) return checkoutButtonRef.current
     const paymentButtons = document.querySelectorAll('#payment-data-submit')
     const visiblePaymentButton = Array.from(paymentButtons).find((paymentButton) => {
       return paymentButton.checkVisibility()
     }) as HTMLButtonElement
-    checkoutButtonRef.current = visiblePaymentButton;
+    checkoutButtonRef.current = visiblePaymentButton
     return visiblePaymentButton
   }
 
   const getAccordion = () => {
-    const elementEstilosCard = document.querySelector("#payment-group-TarjetaEstilosPaymentGroup")
+    const elementEstilosCard = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
     // console.log("elementEstilosCard ",elementEstilosCard);
   }
 
   const getCustomCheckoutPaymentButton = () => {
-    if (!!customCheckoutPaymentButton.current) return customCheckoutPaymentButton.current;
+    if (!!customCheckoutPaymentButton.current) return customCheckoutPaymentButton.current
     const visiblePaymentButton = getCheckoutPaymentButton()
     if (!visiblePaymentButton) return null
     const buttonPaymentParent = visiblePaymentButton.parentNode
@@ -271,12 +264,26 @@ const PaymentForm: FC<Props> = () => {
   }
 
   const canEnablePayment = () => {
-    if (!orderForm) return false
-    if (!cardNumber || cardNumber === '') return false
-    if (!paymentType || paymentType === '') return false
-    if (!selectedTerm || selectedTerm === '') return false
-    if (!validPromotion) return false
-    if (showLoader) return false
+    if (!orderForm) {
+      return false
+    }
+    if (!cardNumber || cardNumber === '') {
+      console.log();
+      
+      return false
+    }
+    if (!paymentType || paymentType === '') {
+      return false
+    }
+    if (!selectedTerm || selectedTerm === '') {
+      return false
+    }
+    if (!validPromotion) {
+      return false
+    }
+    if (showLoader) {
+      return false
+    }
 
     return true
   }
@@ -291,27 +298,25 @@ const PaymentForm: FC<Props> = () => {
   }, [data, isLoading, configError])
 
   useEffect(() => {
-    window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {      
+    window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {
       /* get all payment buttons and detect what is visible */
       const visiblePaymentButton = getCheckoutPaymentButton()
-      
+
       if (!visiblePaymentButton) return
       if (!changedOrderForm) return
-      console.log("changedOrderForm ",changedOrderForm);
+      // console.log('changedOrderForm ', changedOrderForm)
       const isTarjetaEstilos = isTarjetaEstilosPayment(changedOrderForm)
       const isCombo = isComboPayment(changedOrderForm)
-      console.log(isCombo,"isCombo");
+      // console.log(isCombo, 'isCombo')
       const customCheckoutPaymentButton = getCustomCheckoutPaymentButton()
-      if(isCombo){
-        let itemsOpt = document.querySelectorAll(".v-custom-payment-item-wrap")
-        console.log('itemsOpt',itemsOpt);
-        itemsOpt.forEach((item:any,index:number)=>{
-          if(index != 0){
-            item.style.display = "none";
+      if (isCombo) {
+        let itemsOpt = document.querySelectorAll('.v-custom-payment-item-wrap')
+        // console.log('itemsOpt', itemsOpt)
+        itemsOpt.forEach((item: any, index: number) => {
+          if (index != 0) {
+            item.style.display = 'none'
           }
-        }
-        
-      )
+        })
         // alert("TIENES UN COMBO ESTILOS EN T CARRITO, SOLO DEBES COMRPAR CON  TARJETA ESTILOS")
       }
       if (!customCheckoutPaymentButton) return
@@ -323,34 +328,33 @@ const PaymentForm: FC<Props> = () => {
     })
   }, [])
 
-  useEffect(()=>{
+  useEffect(() => {
     loadSimulation()
-    console.log('cambios en orderform');
-    
-  },[orderForm])
+    // console.log('cambios en orderform')
+  }, [orderForm])
 
   useEffect(() => {
-    document.addEventListener("loadingDiscounts", () => {
-      console.log("loadingDiscounts")
+    document.addEventListener('loadingDiscounts', () => {
+      // console.log('loadingDiscounts')
       setLoadingPromotions(true)
       showScreenLoader()
     })
 
-    document.addEventListener("discountsLoaded", () => {
-      console.log("discountsLoaded")
+    document.addEventListener('discountsLoaded', () => {
+      // console.log('discountsLoaded')
       setLoadingPromotions(false)
       hideScreenLoader()
     })
 
     return () => {
-      document.removeEventListener("loadingDiscounts", () => {
-        console.log("loadingDiscounts")
+      document.removeEventListener('loadingDiscounts', () => {
+        // console.log('loadingDiscounts')
         setLoadingPromotions(true)
         showScreenLoader()
       })
 
-      document.removeEventListener("discountsLoaded", () => {
-        console.log("discountsLoaded")
+      document.removeEventListener('discountsLoaded', () => {
+        // console.log('discountsLoaded')
         setLoadingPromotions(false)
         hideScreenLoader()
       })
@@ -360,13 +364,16 @@ const PaymentForm: FC<Props> = () => {
   return showModal ? (
     <LoaderContext.Provider value={{ showLoader, toggleLoader }}>
       <div className={styles['modal-background']}>
-        <>{console.log("paymentType ",paymentType)}</>
+        {/* <>{console.log('paymentType ', paymentType)}</> */}
         <section className={styles.wrapper}>
           <FullScreenLoader />
           <header className={styles['header-paymentapp']}>
             <img src={headerImage} alt="header" />
           </header>
-          <main id={'paymentapp-container'} className={`${styles.body} ${simulationFullscreen ? styles['simulation-fullscreen'] : ''}`}>
+          <main
+            id={'paymentapp-container'}
+            className={`${styles.body} ${simulationFullscreen ? styles['simulation-fullscreen'] : ''}`}
+          >
             <form>
               <Step title="Paso 1" subtitle="Ingresa el número de tu Tarjeta Estilos" id={'step-1'}>
                 <CardInput value={cardNumber} onChange={handleCardNumberChange} />
@@ -396,8 +403,12 @@ const PaymentForm: FC<Props> = () => {
               </Step>
             </form>
 
-
-            <SimulationTable id='simulation' simulation={simulation} onChangeFullscreen={changeSimulationFullscreen}  setMainTotal={setMainTotal} />
+            <SimulationTable
+              id="simulation"
+              simulation={simulation}
+              onChangeFullscreen={changeSimulationFullscreen}
+              setMainTotal={setMainTotal}
+            />
 
             {showPasswordModal && (
               <NumericKeypad
@@ -410,9 +421,27 @@ const PaymentForm: FC<Props> = () => {
             )}
           </main>
           <footer className={styles['footer-paymentapp']}>
-            {orderForm ? <p className={styles['checkout-total-installments']} >Total al contado: {currencyFormatter.format(orderForm?.value / 100)}</p> : <></>}
-            {( mainTotal != 0 && simulation && paymentType!='' && paymentType!='1') ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(mainTotal)}</p> : <></>}
-            {( paymentType=='1'&& orderForm) ? <p className={styles['checkout-total-installments']} >Total en cuotas: {currencyFormatter.format(orderForm?.value / 100)}</p> : <></>}
+            {orderForm ? (
+              <p className={styles['checkout-total-installments']}>
+                Total al contado: {currencyFormatter.format(orderForm?.value / 100)}
+              </p>
+            ) : (
+              <></>
+            )}
+            {mainTotal != 0 && simulation && paymentType != '' && paymentType != '1' ? (
+              <p className={styles['checkout-total-installments']}>
+                Total en cuotas: {currencyFormatter.format(mainTotal)}
+              </p>
+            ) : (
+              <></>
+            )}
+            {paymentType == '1' && orderForm ? (
+              <p className={styles['checkout-total-installments']}>
+                Total en cuotas: {currencyFormatter.format(orderForm?.value / 100)}
+              </p>
+            ) : (
+              <></>
+            )}
             <button disabled={!canEnablePayment() || loadingPromotions} data-style="primary" onClick={confirmPayment}>
               Confirmar
             </button>
@@ -423,8 +452,10 @@ const PaymentForm: FC<Props> = () => {
           <AlertModal />
         </section>
       </div>
-    </LoaderContext.Provider >
-  ) : <></>
+    </LoaderContext.Provider>
+  ) : (
+    <></>
+  )
 }
 
 export default PaymentForm

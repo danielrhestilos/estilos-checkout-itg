@@ -161,9 +161,9 @@ function createDivAndElements(): void {
     // Validacion para meter todo en el contenedor padre
     const googleParentContainer = document.querySelector('.vtex-omnishipping-1-x-address')
     if (googleParentContainer) {
+      
       googleParentContainer.appendChild(contenedorPrincipal)
     }
-    console.log("holaa")
     
     // Función para obtener los datos del formulario en un objeto JSON
     function getFormData() {
@@ -196,7 +196,6 @@ function createDivAndElements(): void {
     // Función para manejar el evento click del botón "btn-go-to-payment"
     function handleGoToPaymentClick() {
       const formData = getFormData()
-      console.log('Form Data:', formData)
 
       const orderFormId = window.vtexjs.checkout.orderForm.orderFormId
       const formDataValue = JSON.stringify(formData)

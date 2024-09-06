@@ -30,7 +30,8 @@ export async function request<T>(params: RequestParams): Promise<T> {
     }
 
     const response = await fetch(params.url, requestOptions)
-
+    // console.log('response --->',response);
+    
     if (!response.ok) {
       throw new Error('Error en la solicitud')
     }

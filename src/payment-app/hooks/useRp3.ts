@@ -50,7 +50,8 @@ const useRp3 = () => {
   }
 
   const getPaymentMethods = async (cardNumber: string) => {
-    console.log("getPaymentMethods")
+    // console.log("getPaymentMethods")
+    // console.log("cardNumber ",cardNumber)
     try {
       setLoading(true)
       const response: any = await request({
@@ -122,7 +123,7 @@ const useRp3 = () => {
   const getSimulation = async (simulationData: any) => {
     try {
       setLoading(true)
-      console.log("simulationData ",simulationData)
+      // console.log("simulationData ",simulationData)
       const response: any = await request({
         url: '/_v/api/estilospe/getsimulation',
         body: encrypt(
@@ -149,7 +150,8 @@ const useRp3 = () => {
   const registerTransaction = async (transactionData: any) => {
     try {
       setLoading(true)
-
+      // console.log('transactionData ->', transactionData);
+      
       const response: any = await request({
         url: '/_v/api/estilospe/registertransaction',
         body: encrypt(

@@ -18,7 +18,6 @@ export const isTarjetaEstilosPayment = (orderForm: OrderForm): boolean => {
   const paymentSystemData = paymentSystems.find((paymentSystemData) => paymentSystemData.id === parseInt(paymentSystem))
   if (!paymentSystemData) return false
   const { groupName } = paymentSystemData
-  // console.log("groupName : ",groupName);
   return groupName === 'TarjetaEstilosPaymentGroup'
 }
 

@@ -50,7 +50,8 @@ class EventQueue {
 
     this.running = true;
     const eventData = this.queue.shift();
-
+    // console.log("eventData",eventData);
+    
     try {
       document.dispatchEvent(loadingDiscounts)
       await new Promise(resolve => setTimeout(async () => {

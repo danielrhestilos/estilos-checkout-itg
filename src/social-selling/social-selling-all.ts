@@ -31,7 +31,7 @@ function socialSellingContentAll(sendId: string){
   const shareIcon1 = document.createElement('span');
   shareIcon1.className = 'shareIcon';
   const link1 = document.createElement('a');
-  link1.href = 'https://wa.me/?text=Este%20es%20el%20link%20de%20mi%20carrito:%20https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart';
+  link1.href = `https://wa.me/?text=Este%20es%20el%20link%20de%20mi%20carrito:%20https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart`;
   link1.textContent = '';
   link1.id = 'iconWhatsapp'
   shareIcon1.appendChild(link1);
@@ -39,7 +39,7 @@ function socialSellingContentAll(sendId: string){
   const shareIcon2 = document.createElement('span');
   shareIcon2.className = 'shareIcon';
   const link2 = document.createElement('a');
-  link2.href = 'https://www.facebook.com/dialog/send?&amp;link=https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart';
+  link2.href = `https://www.facebook.com/dialog/send?&amp;link=https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart`;
   link2.textContent = '';
   link2.id = 'iconMessenger'
   shareIcon2.appendChild(link2);
@@ -47,7 +47,7 @@ function socialSellingContentAll(sendId: string){
   const shareIcon3 = document.createElement('span');
   shareIcon3.className = 'shareIcon';
   const link3 = document.createElement('a');
-  link3.href = 'mailto:escribeuncorreo@correo.com?subject=Mi%20Carrito&body=Este%20es%20el%20link%20de%20mi%20carrito:%20https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart';
+  link3.href = `mailto:escribeuncorreo@correo.com?subject=Mi%20Carrito&body=Este%20es%20el%20link%20de%20mi%20carrito:%20https://www.estilos.com.pe/checkout/?orderFormId=${sendId}%23/cart`;
   link3.textContent = '';
   link3.id = 'iconMail'
   shareIcon3.appendChild(link3);
