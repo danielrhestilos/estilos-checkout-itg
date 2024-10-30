@@ -40,7 +40,6 @@ export function editAddressData() {
   
     const availableAddressList = document.querySelectorAll('.vtex-omnishipping-1-x-addressItemOption')
     availableAddressList.forEach((addressElement) => {
-      // console.log("addressElement :",addressElement)
       const dato = Object.entries(addressElement.children).filter(([, block]) => {
         if (block.className === 'icon-edit') {
           return true

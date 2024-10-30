@@ -22,6 +22,12 @@ async function renderHeaderStepper() {
       element.div.classList.add('inActive')
     })
   } else if (hash === '#/shipping') {
+
+    // $(window).on("orderFormUpdated.vtex", function(evt, orderForm) {
+    //   console.log("Someone changed the orderForm!")
+    //   console.log(orderForm)
+    // })
+
     elements.slice(2).forEach((element) => {
       element.hr.classList.add('inActive')
       element.div.classList.add('inActive')

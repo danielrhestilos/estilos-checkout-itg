@@ -58,6 +58,7 @@ const SimulationTable: React.FC<SimulationTableProps> = ({
       id={id}
       className={fullscreen ? styles['simulation-table-fullscreen'] : ''}
     >
+
       <table className={styles['simulation-table']}>
         <thead>
           <tr>
@@ -87,6 +88,7 @@ const SimulationTable: React.FC<SimulationTableProps> = ({
       ) : (
         <></>
       )}
+
     </section>
   ) : (
     <></>

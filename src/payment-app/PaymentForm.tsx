@@ -88,16 +88,41 @@ const PaymentForm: FC<Props> = () => {
     canEnablePayment()
   }
 
+  // async function applyDiscountCoupon() {
+  //   try {
+  //     const orderForm: any = await vtexjs.checkout.getOrderForm();
+  //     const code = 'PRUEBAESTILOS';
+
+  //     const updatedOrderForm: any = await vtexjs.checkout.addDiscountCoupon(code);
+
+  //     alert('Coupon added.');
+  //     console.log(updatedOrderForm);
+  //     console.log(updatedOrderForm.paymentData);
+  //     console.log(updatedOrderForm.totalizers);
+  //   } catch (error) {
+  //     console.error('Error applying coupon:', error);
+  //   }
+  // }
+
   const handleTermChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     toggleLoader()
     setMainTotal(0)
     setSelectedTerm(event.target.value)
+    let installments = Number(event.target.value)
     canEnablePayment()
     await updatePaymentOrderForm({
       paymentType,
       installments: event.target.value,
     })
-
+    // console.log('selectedTerm ', event.target.value)
+    // if (installments >= 3) {
+    //   console.log('aplica promo')
+    //   await applyDiscountCoupon()
+    // } else {
+    //   console.log('no aplica promo')
+    // }
+    // console.log('orderForm handleTermChange', orderForm)
+    // if(selectedTerm)
     try {
       document.dispatchEvent(loadingDiscounts)
       const response = await request<any>({
@@ -268,8 +293,8 @@ const PaymentForm: FC<Props> = () => {
       return false
     }
     if (!cardNumber || cardNumber === '') {
-      console.log();
-      
+      console.log()
+
       return false
     }
     if (!paymentType || paymentType === '') {
@@ -361,6 +386,13 @@ const PaymentForm: FC<Props> = () => {
     }
   }, [])
 
+  const today = new Date()
+  const formattedDate = today.toLocaleDateString('es-ES', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  })
+
   return showModal ? (
     <LoaderContext.Provider value={{ showLoader, toggleLoader }}>
       <div className={styles['modal-background']}>
@@ -374,6 +406,10 @@ const PaymentForm: FC<Props> = () => {
             id={'paymentapp-container'}
             className={`${styles.body} ${simulationFullscreen ? styles['simulation-fullscreen'] : ''}`}
           >
+            <span style={{ fontWeight: '700', textAlign: 'center' }}>
+              Esto es un simulador. Los cálculos mostrados consideran que la compra se realizó hoy,
+              {formattedDate}:{' '}
+            </span>
             <form>
               <Step title="Paso 1" subtitle="Ingresa el número de tu Tarjeta Estilos" id={'step-1'}>
                 <CardInput value={cardNumber} onChange={handleCardNumberChange} />
@@ -409,7 +445,6 @@ const PaymentForm: FC<Props> = () => {
               onChangeFullscreen={changeSimulationFullscreen}
               setMainTotal={setMainTotal}
             />
-
             {showPasswordModal && (
               <NumericKeypad
                 show={showPasswordModal}
@@ -419,7 +454,13 @@ const PaymentForm: FC<Props> = () => {
                 }}
               />
             )}
+            <p style={{ width: '264px', margin: 'auto' }}>
+              Los datos proporcionados por el simulador de cuotas son únicamente referenciales. Los valores reales se
+              calcularán y confirmarán una vez que se complete el proceso de compra. Te recomendamos utilizar esta
+              información como una guía inicial y no como un compromiso definitivo.
+            </p>
           </main>
+
           <footer className={styles['footer-paymentapp']}>
             {orderForm ? (
               <p className={styles['checkout-total-installments']}>
@@ -442,6 +483,7 @@ const PaymentForm: FC<Props> = () => {
             ) : (
               <></>
             )}
+
             <button disabled={!canEnablePayment() || loadingPromotions} data-style="primary" onClick={confirmPayment}>
               Confirmar
             </button>

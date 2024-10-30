@@ -20,7 +20,7 @@ In practice, it means that Checkout UI Settings allows A/B testing in your store
 10. Still logged into the desired account, [create a production workspace](https://vtex.io/docs/recipes/development/creating-a-production-workspace) and [install the app](https://vtex.io/docs/recipes/development/installing-an-app);
 10. If everything is working as expected, [promote the workspace to master](https://vtex.io/docs/recipes/development/promoting-a-workspace-to-master).
 
-## Modus Operandi 
+## Modus Operandi w
 
 Once the app is deployed and installed in the account, every scripts contained in it will be automatically linked to your store and used to [build the templates](https://help.vtex.com/tutorial/configure-template-in-smartcheckout-update--ToTE5XB39t0SwtHgpgwSv?locale=en#configuring-templates-from-the-code-menu) to customize your Checkout.
 
