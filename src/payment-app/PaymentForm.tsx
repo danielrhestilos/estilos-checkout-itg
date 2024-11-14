@@ -324,13 +324,20 @@ const PaymentForm: FC<Props> = () => {
 
   useEffect(() => {
     window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {
-      
       const paymentGroupTE = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
       if (paymentGroupTE) {
         if (!paymentGroupTE.querySelector('.nuevo-bloque')) {
-          paymentGroupTE.innerHTML += '<div class="nuevo-bloque"><img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a8bd4058-cb54-4de9-a3d1-0f8c57c33082___03d0950faf41925325b9a0c5b00a6441.png"/></div><span>Aplica <a target="__blank" href="https://www.tarjetaestilos.com.pe/terminoscondiciones/6%20MESES%20SIN%20INTERESES%20EN%20ELECTRO,%20COLCHONERIA,%20MUEBLES,%20ETC%20(14-17)%20NOVIEMBRE?fbclid=IwZXh0bgNhZW0CMTAAAR1DzBlW_dFw9nNs87slK_AZAqlhYgoXZvuSWoMqBaWVw7QabHn8EUhnGC0_aem_ehAPpqJROEU8vqsi3Icfyg">términos y condiciones</a></span>'
+          paymentGroupTE.innerHTML += '<div class="nuevo-bloque"><img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a8bd4058-cb54-4de9-a3d1-0f8c57c33082___03d0950faf41925325b9a0c5b00a6441.png"/></div>'
         }
       }
+
+      const paymentGroupTitle = document.querySelector('#payments-title')
+      if (paymentGroupTitle && !document.querySelector("#nuevo-bloque-link")) {
+        // if (!document.querySelector('#payments-title')) {
+          paymentGroupTitle.innerHTML += '<span id="nuevo-bloque-link"><a href="https://www.tarjetaestilos.com.pe/terminoscondiciones/6%20MESES%20SIN%20INTERESES%20EN%20ELECTRO,%20COLCHONERIA,%20MUEBLES,%20ETC%20(14-17)%20NOVIEMBRE?fbclid=IwZXh0bgNhZW0CMTAAAR1DzBlW_dFw9nNs87slK_AZAqlhYgoXZvuSWoMqBaWVw7QabHn8EUhnGC0_aem_ehAPpqJROEU8vqsi3Icfyg&_gl=1%2ate7jiu%2a_gcl_aw%2aR0NMLjE3MzEwMTM5ODQuQ2owS0NRaUE1N0c1QmhEVUFSSXNBQ2dDWW54MnNMekhhSEliNzhqdVZ1M3JTemh3ZVJVTktOVEcxVVhLQVhJaG1HeXVDRnpNblFReVdVTWFBdVdBRUFMd193Y0I.%2a_gcl_au%2aNDY3Nzk5NTc2LjE3MzAzOTA2NjI." target="__blank">Aplican Términos y condiciones</a></span>'
+        // }
+      }
+
       /* get all payment buttons and detect what is visible */
       const visiblePaymentButton = getCheckoutPaymentButton()
 
