@@ -324,6 +324,13 @@ const PaymentForm: FC<Props> = () => {
 
   useEffect(() => {
     window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {
+      
+      const paymentGroupTE = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
+      if (paymentGroupTE) {
+        if (!paymentGroupTE.querySelector('.nuevo-bloque')) {
+          paymentGroupTE.innerHTML += '<div class="nuevo-bloque"><img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a8bd4058-cb54-4de9-a3d1-0f8c57c33082___03d0950faf41925325b9a0c5b00a6441.png"/></div><span>Aplica <a href="https://www.tarjetaestilos.com.pe/terminoscondiciones/6%20MESES%20SIN%20INTERESES%20EN%20ELECTRO,%20COLCHONERIA,%20MUEBLES,%20ETC%20(14-17)%20NOVIEMBRE?fbclid=IwZXh0bgNhZW0CMTAAAR1DzBlW_dFw9nNs87slK_AZAqlhYgoXZvuSWoMqBaWVw7QabHn8EUhnGC0_aem_ehAPpqJROEU8vqsi3Icfyg">términos y condiciones</a></span>'
+        }
+      }
       /* get all payment buttons and detect what is visible */
       const visiblePaymentButton = getCheckoutPaymentButton()
 

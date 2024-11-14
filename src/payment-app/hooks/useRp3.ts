@@ -66,7 +66,8 @@ const useRp3 = () => {
       })
 
       const data = response.result
-
+      console.log('data ->',data);
+      
       const dataGrouped: any = {}
 
       data.forEach((item: any) => {
@@ -76,7 +77,8 @@ const useRp3 = () => {
 
         dataGrouped[item.DeferredType].push(item)
       })
-
+      console.log('dataGrouped: ',dataGrouped);
+      
       const rates = Object.entries(dataGrouped).map(([key, value]) => {
         const paymentsOptions = value as DeferredOption[]
 

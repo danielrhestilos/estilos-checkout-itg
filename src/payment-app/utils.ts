@@ -29,6 +29,15 @@ export const isComboPayment = (orderForm : OrderForm):boolean => {
   return false
 }
 
+export const is6MsiPromo = (orderForm : OrderForm):boolean => {
+  let item = orderForm.items.find ((item:Item)=>item.name.toLocaleLowerCase().startsWith("combo tarjeta"))
+  if(item){
+    return true
+  }
+  return false
+}
+
+
 
 export const scrollToTarget = function (target: string, container = '#paymentapp-container') {
   try {
