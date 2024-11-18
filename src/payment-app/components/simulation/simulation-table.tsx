@@ -7,12 +7,13 @@ import { render } from 'react-dom'
 type SimulationTableProps = {
   id?: string
   paymentType?:number
+  selectedTerm?:string
   simulation: Simulation[]
   onChangeFullscreen?: (fullscreen: boolean) => void
   setMainTotal: (total: number) => void
 }
 
-const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onChangeFullscreen, setMainTotal ,paymentType}) => {
+const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onChangeFullscreen, setMainTotal ,paymentType,selectedTerm}) => {
   const [fullscreen, setFullscreen] = useState<boolean>(false)
   const [renderItems, setRenderItems] = useState<Simulation[]>([])
 
@@ -77,7 +78,7 @@ const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onCha
           <tr>
             <th className={styles['term-number']}>Cuota</th>
             <th>Fecha</th>
-            <th>Valor</th>
+            {selectedTerm !='1' &&<th>Valor</th>}
           </tr>
         </thead>
         <tbody>
@@ -86,7 +87,7 @@ const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onCha
               <td className={styles['term-number']}>{`${data.InstallmentNumber}°`}</td>
               {/* <td>{paymentType !== 6?  <>{data.PaymentDate}</> : <>{sumarDias(data.PaymentDate,30)}</>}</td> */}
               {paymentType == 6 ? <td>{sumarDias(data.PaymentDate,30)}</td> : <td>{data.PaymentDate}</td>}
-              <td>{data.InstallmentDeferredCapitalAmount.toFixed(2)}</td>
+              {selectedTerm != '1' && <td>{data.InstallmentDeferredCapitalAmount.toFixed(2)}</td>}
             </tr>
           ))}
         </tbody>

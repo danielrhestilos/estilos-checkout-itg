@@ -466,6 +466,7 @@ const PaymentForm: FC<Props> = () => {
 
             <SimulationTable
             paymentType={paymentType}
+            selectedTerm={selectedTerm}
               id="simulation"
               simulation={simulation}
               onChangeFullscreen={changeSimulationFullscreen}
