@@ -1,7 +1,7 @@
 {
   "name": "checkout-ui-settings",
   "vendor": "estilospe",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "title": "Checkout UI Settings",
   "description": "Declare custom settings to be used by checkout ui",
   "builders": {
