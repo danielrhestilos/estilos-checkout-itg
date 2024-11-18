@@ -12,7 +12,7 @@ interface StepProps {
 
 const Step: FC<StepProps> = ({ title, subtitle, children, id }) => {
   return (
-    <section id={id} className={styles['payment-step__container']}>
+    <section id={id} className={styles['payment-step__container']} style={{width:'90%'}}>
       <div className={styles['payment-step__header']}>
         <h2>{title}</h2>
       </div>

@@ -195,7 +195,7 @@ const PaymentForm: FC<Props> = () => {
   }
 
   const loadPaymentTypes = async () => {
-    await getPaymentMethods(cardNumber)
+    const pMethods = await getPaymentMethods(cardNumber)
   }
 
   const loadSimulation = async () => {
@@ -263,7 +263,6 @@ const PaymentForm: FC<Props> = () => {
 
   const getAccordion = () => {
     const elementEstilosCard = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
-    // console.log("elementEstilosCard ",elementEstilosCard);
   }
 
   const getCustomCheckoutPaymentButton = () => {
@@ -293,7 +292,6 @@ const PaymentForm: FC<Props> = () => {
       return false
     }
     if (!cardNumber || cardNumber === '') {
-      console.log()
 
       return false
     }
@@ -324,19 +322,21 @@ const PaymentForm: FC<Props> = () => {
 
   useEffect(() => {
     window.$(window).on('orderFormUpdated.vtex', function (evt: any, changedOrderForm: OrderForm) {
-      const paymentGroupTE = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
-      if (paymentGroupTE) {
-        if (!paymentGroupTE.querySelector('.nuevo-bloque')) {
-          paymentGroupTE.innerHTML += '<div class="nuevo-bloque"><img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a8bd4058-cb54-4de9-a3d1-0f8c57c33082___03d0950faf41925325b9a0c5b00a6441.png"/></div>'
-        }
-      }
+      // const paymentGroupTE = document.querySelector('#payment-group-TarjetaEstilosPaymentGroup')
+      // if (paymentGroupTE) {
+      //   if (!paymentGroupTE.querySelector('.nuevo-bloque')) {
+      //     paymentGroupTE.innerHTML +=
+      //       '<div class="nuevo-bloque"><img src="https://estilospe.vtexassets.com/assets/vtex.file-manager-graphql/images/a8bd4058-cb54-4de9-a3d1-0f8c57c33082___03d0950faf41925325b9a0c5b00a6441.png"/></div>'
+      //   }
+      // }
 
-      const paymentGroupTitle = document.querySelector('#payments-title')
-      if (paymentGroupTitle && !document.querySelector("#nuevo-bloque-link")) {
-        // if (!document.querySelector('#payments-title')) {
-          paymentGroupTitle.innerHTML += '<span id="nuevo-bloque-link"><a href="https://www.tarjetaestilos.com.pe/terminoscondiciones/6%20MESES%20SIN%20INTERESES%20EN%20ELECTRO,%20COLCHONERIA,%20MUEBLES,%20ETC%20(14-17)%20NOVIEMBRE?fbclid=IwZXh0bgNhZW0CMTAAAR1DzBlW_dFw9nNs87slK_AZAqlhYgoXZvuSWoMqBaWVw7QabHn8EUhnGC0_aem_ehAPpqJROEU8vqsi3Icfyg&_gl=1%2ate7jiu%2a_gcl_aw%2aR0NMLjE3MzEwMTM5ODQuQ2owS0NRaUE1N0c1QmhEVUFSSXNBQ2dDWW54MnNMekhhSEliNzhqdVZ1M3JTemh3ZVJVTktOVEcxVVhLQVhJaG1HeXVDRnpNblFReVdVTWFBdVdBRUFMd193Y0I.%2a_gcl_au%2aNDY3Nzk5NTc2LjE3MzAzOTA2NjI." target="__blank">Pago Tarjeta Estilos: Aplican Términos y condiciones</a></span>'
-        // }
-      }
+      // const paymentGroupTitle = document.querySelector('#payments-title')
+      // if (paymentGroupTitle && !document.querySelector('#nuevo-bloque-link')) {
+      //   // if (!document.querySelector('#payments-title')) {
+      //   paymentGroupTitle.innerHTML +=
+      //     '<span id="nuevo-bloque-link"><a href="https://www.tarjetaestilos.com.pe/terminoscondiciones/6%20MESES%20SIN%20INTERESES%20EN%20ELECTRO,%20COLCHONERIA,%20MUEBLES,%20ETC%20(14-17)%20NOVIEMBRE?fbclid=IwZXh0bgNhZW0CMTAAAR1DzBlW_dFw9nNs87slK_AZAqlhYgoXZvuSWoMqBaWVw7QabHn8EUhnGC0_aem_ehAPpqJROEU8vqsi3Icfyg&_gl=1%2ate7jiu%2a_gcl_aw%2aR0NMLjE3MzEwMTM5ODQuQ2owS0NRaUE1N0c1QmhEVUFSSXNBQ2dDWW54MnNMekhhSEliNzhqdVZ1M3JTemh3ZVJVTktOVEcxVVhLQVhJaG1HeXVDRnpNblFReVdVTWFBdVdBRUFMd193Y0I.%2a_gcl_au%2aNDY3Nzk5NTc2LjE3MzAzOTA2NjI." target="__blank">Pago Tarjeta Estilos: Aplican Términos y condiciones</a></span>'
+      //   // }
+      // }
 
       /* get all payment buttons and detect what is visible */
       const visiblePaymentButton = getCheckoutPaymentButton()
@@ -399,7 +399,10 @@ const PaymentForm: FC<Props> = () => {
       })
     }
   }, [])
+  // useEffect(()=>{
+  //   console.log("selectedTerm",selectedTerm);
 
+  // },[selectedTerm])
   const today = new Date()
   const formattedDate = today.toLocaleDateString('es-ES', {
     day: '2-digit',
@@ -420,11 +423,11 @@ const PaymentForm: FC<Props> = () => {
             id={'paymentapp-container'}
             className={`${styles.body} ${simulationFullscreen ? styles['simulation-fullscreen'] : ''}`}
           >
-            <span style={{ fontWeight: '700', textAlign: 'center' }}>
+            {!simulation && <span style={{ fontWeight: '700', textAlign: 'center' }}>
               Esto es un simulador. Los cálculos mostrados consideran que la compra se realizó hoy,
               {formattedDate}:{' '}
-            </span>
-            <form>
+            </span>}
+            <form style={{ margin: 'auto' }}>
               <Step title="Paso 1" subtitle="Ingresa el número de tu Tarjeta Estilos" id={'step-1'}>
                 <CardInput value={cardNumber} onChange={handleCardNumberChange} />
               </Step>
@@ -442,11 +445,19 @@ const PaymentForm: FC<Props> = () => {
               </Step>
               <Step title="Paso 3" subtitle="Seleccione el número de cuotas" id={'step-3'}>
                 <Select
-                  options={paymentType && paymentMethods ? paymentMethods?.terms[parseInt(paymentType, 10) - 1] : []}
+                  options={
+                    paymentType === '6'
+                      ? paymentMethods?.terms?.[3] || []
+                      : paymentType && paymentMethods
+                      ? paymentMethods.terms?.[parseInt(paymentType, 10) - 1] || []
+                      : []
+                  }
+                  // options={paymentType && paymentMethods ? paymentMethods?.terms[parseInt(paymentType, 10) - 1] : []}
                   value={selectedTerm}
                   onChange={handleTermChange}
                   placeholder="Número de cuotas"
                 />
+
                 {/* <button type="button" data-style="primary" disabled={!paymentType || !selectedTerm} onClick={loadSimulation}>
                   Calcular cuotas
                 </button> */}
@@ -454,6 +465,7 @@ const PaymentForm: FC<Props> = () => {
             </form>
 
             <SimulationTable
+            paymentType={paymentType}
               id="simulation"
               simulation={simulation}
               onChangeFullscreen={changeSimulationFullscreen}
@@ -468,11 +480,11 @@ const PaymentForm: FC<Props> = () => {
                 }}
               />
             )}
-            <p style={{ width: '264px', margin: 'auto' }}>
+            {!simulation &&<p style={{ width: '264px', margin: 'auto' }}>
               Los datos proporcionados por el simulador de cuotas son únicamente referenciales. Los valores reales se
               calcularán y confirmarán una vez que se complete el proceso de compra. Te recomendamos utilizar esta
               información como una guía inicial y no como un compromiso definitivo.
-            </p>
+            </p>}
           </main>
 
           <footer className={styles['footer-paymentapp']}>
@@ -485,7 +497,12 @@ const PaymentForm: FC<Props> = () => {
             )}
             {mainTotal != 0 && simulation && paymentType != '' && paymentType != '1' ? (
               <p className={styles['checkout-total-installments']}>
-                Total en cuotas: {currencyFormatter.format(mainTotal)}
+                Total en cuotas:{' '}
+                {selectedTerm !== '1' ? (
+                  <>{currencyFormatter.format(mainTotal)}</>
+                ) : (
+                  <>{currencyFormatter.format(orderForm?.value / 100)}</>
+                )}
               </p>
             ) : (
               <></>

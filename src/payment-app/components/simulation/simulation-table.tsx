@@ -2,38 +2,55 @@ import React, { useEffect, useState } from 'react'
 import styles from './simulation-table.module.css'
 import type { Simulation } from '../../typings/types'
 import { scrollToTarget } from '../../utils'
+import { render } from 'react-dom'
 
 type SimulationTableProps = {
   id?: string
+  paymentType?:number
   simulation: Simulation[]
   onChangeFullscreen?: (fullscreen: boolean) => void
-  setMainTotal:(total:number) => void,
+  setMainTotal: (total: number) => void
 }
 
-const SimulationTable: React.FC<SimulationTableProps> = ({
-  id,
-  simulation,
-  onChangeFullscreen ,
-  setMainTotal
-}) => {
-
+const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onChangeFullscreen, setMainTotal ,paymentType}) => {
   const [fullscreen, setFullscreen] = useState<boolean>(false)
   const [renderItems, setRenderItems] = useState<Simulation[]>([])
-
 
   const toggleFullscreen = () => {
     setFullscreen(!fullscreen)
   }
+  // useEffect(()=>{
+  //   console.log("renderItems: ",renderItems);
+  //   renderItems.forEach((item:any)=>{
+  //     console.log('item date sumar dias', sumarDias(item.paymentData,30));
+  //   })
+  // },[renderItems])
+  useEffect(()=>{
+    console.log('paymentType ',paymentType);
+    
+  },[paymentType])
+  function sumarDias(fechaStr:string, dias:number) {
+    const [dia, mes, anio] = fechaStr.split('/').map(Number);
+    const fecha = new Date(anio, mes - 1, dia);
+    fecha.setDate(fecha.getDate() + dias);
+  
+    const diaNuevo = fecha.getDate().toString().padStart(2, '0');
+    const mesNuevo = (fecha.getMonth() + 1).toString().padStart(2, '0');
+    const anioNuevo = fecha.getFullYear();
+  
+    return `${diaNuevo}/${mesNuevo}/${anioNuevo}`;
+  }
 
   useEffect(() => {
-    if(simulation){
-      setMainTotal(simulation.reduce((accumulator: number, data: Simulation) => {
-        const amount = Number(data.InstallmentDeferredCapitalAmount);
-        return accumulator + Number(amount.toFixed(2));
-        }, 0));
+    if (simulation) {
+      setMainTotal(
+        simulation.reduce((accumulator: number, data: Simulation) => {
+          const amount = Number(data.InstallmentDeferredCapitalAmount)
+          return accumulator + Number(amount.toFixed(2))
+        }, 0)
+      )
     }
-  }, [simulation]);
-
+  }, [simulation])
 
   useEffect(() => {
     if (!onChangeFullscreen) return
@@ -50,15 +67,11 @@ const SimulationTable: React.FC<SimulationTableProps> = ({
     setRenderItems(simulation.slice(0, 3))
     setTimeout(() => {
       scrollToTarget(`#${id}`)
-    }, 1000);
+    }, 1000)
   }, [fullscreen, simulation])
 
   return simulation ? (
-    <section
-      id={id}
-      className={fullscreen ? styles['simulation-table-fullscreen'] : ''}
-    >
-
+    <section id={id} className={fullscreen ? styles['simulation-table-fullscreen'] : ''}>
       <table className={styles['simulation-table']}>
         <thead>
           <tr>
@@ -70,10 +83,9 @@ const SimulationTable: React.FC<SimulationTableProps> = ({
         <tbody>
           {renderItems.map((data: Simulation) => (
             <tr key={data.InstallmentNumber}>
-              <td className={styles['term-number']}>
-                {`${data.InstallmentNumber}°`}
-              </td>
-              <td>{data.PaymentDate}</td>
+              <td className={styles['term-number']}>{`${data.InstallmentNumber}°`}</td>
+              {/* <td>{paymentType !== 6?  <>{data.PaymentDate}</> : <>{sumarDias(data.PaymentDate,30)}</>}</td> */}
+              {paymentType == 6 ? <td>{sumarDias(data.PaymentDate,30)}</td> : <td>{data.PaymentDate}</td>}
               <td>{data.InstallmentDeferredCapitalAmount.toFixed(2)}</td>
             </tr>
           ))}
@@ -88,7 +100,6 @@ const SimulationTable: React.FC<SimulationTableProps> = ({
       ) : (
         <></>
       )}
-
     </section>
   ) : (
     <></>

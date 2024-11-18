@@ -31,6 +31,8 @@
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   width: 264px;
+  /* width: 90%; */
+  margin: auto;
   min-height: 60px;
 }
 
