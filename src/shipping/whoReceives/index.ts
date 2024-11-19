@@ -16,14 +16,18 @@ export const initWhoReceives = () => {
     newInput.setAttribute('id', 'receiver-dni')
     const errorMessage = document.createElement('small')
     errorMessage.setAttribute('style', 'color:red;display:none')
+    var dniNative = sessionStorage.getItem('inputDNINative'); 
+    if(dniNative){
+      newInput.value= dniNative
+    }
     // const btnPayment: any = document.querySelector('#btn-go-to-payment')
     newInput.addEventListener('input', function () {
       var regexDNI = /^\d{8}$/
       var dni = this.value
-
       if (regexDNI.test(dni)) {
         errorMessage.style.display = 'none'
         btnPayment.style.display = 'block'
+        sessionStorage.setItem('inputDNINative',dni)
       } else {
         errorMessage.innerHTML = 'Formato incorrecto, debe ser un número de 8 dígitos.'
         errorMessage.style.display = 'block'
