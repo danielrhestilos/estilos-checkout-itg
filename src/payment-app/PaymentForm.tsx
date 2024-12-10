@@ -515,9 +515,7 @@ const PaymentForm: FC<Props> = () => {
             </button>
             {!simulation && (
               <p style={{ width: '80%', margin: 'auto' , fontSize:'12px',lineHeight:'14px'}}>
-                Los datos proporcionados por el simulador de cuotas son únicamente referenciales. Los valores reales se
-                calcularán y confirmarán una vez que se complete el proceso de compra. Te recomendamos utilizar esta
-                información como una guía inicial y no como un compromiso definitivo.
+                Los datos del simulador de cuotas son solo orientativos. Los valores finales se calcularán al completar la compra. Úsalo como guía, no como un compromiso definitivo..
               </p>
             )}
           </footer>
