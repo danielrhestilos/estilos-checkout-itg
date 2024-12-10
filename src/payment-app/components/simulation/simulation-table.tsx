@@ -78,16 +78,19 @@ const SimulationTable: React.FC<SimulationTableProps> = ({ id, simulation, onCha
           <tr>
             <th className={styles['term-number']}>Cuota</th>
             <th>Fecha</th>
-            {selectedTerm !='1' &&<th>Valor</th>}
+            <th>Valor</th>
           </tr>
         </thead>
         <tbody>
           {renderItems.map((data: Simulation) => (
             <tr key={data.InstallmentNumber}>
+
+
               <td className={styles['term-number']}>{`${data.InstallmentNumber}°`}</td>
-              {/* <td>{paymentType !== 6?  <>{data.PaymentDate}</> : <>{sumarDias(data.PaymentDate,30)}</>}</td> */}
-              {paymentType == 6 ? <td>{sumarDias(data.PaymentDate,30)}</td> : <td>{data.PaymentDate}</td>}
-              {selectedTerm != '1' && <td>{data.InstallmentDeferredCapitalAmount.toFixed(2)}</td>}
+              <td>{data.PaymentDate}</td>
+              <>{console.log('data.PaymentDate: ',data.PaymentDate)}</>
+              {/* {paymentType == 6 ? <td>{sumarDias(data.PaymentDate,30)}</td> : <td>{data.PaymentDate}</td>} */}
+              <td>{data.InstallmentDeferredCapitalAmount.toFixed(2)}</td>
             </tr>
           ))}
         </tbody>

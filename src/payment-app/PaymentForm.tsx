@@ -292,7 +292,6 @@ const PaymentForm: FC<Props> = () => {
       return false
     }
     if (!cardNumber || cardNumber === '') {
-
       return false
     }
     if (!paymentType || paymentType === '') {
@@ -423,11 +422,13 @@ const PaymentForm: FC<Props> = () => {
             id={'paymentapp-container'}
             className={`${styles.body} ${simulationFullscreen ? styles['simulation-fullscreen'] : ''}`}
           >
-            {!simulation && <span style={{ fontWeight: '700', textAlign: 'center' }}>
-              Esto es un simulador. Los cálculos mostrados consideran que la compra se realizó hoy,
-              {formattedDate}:{' '}
-            </span>}
-            <form style={{ margin: 'auto' }}>
+            {!simulation && (
+              <span style={{ fontWeight: '700', textAlign: 'center' }}>
+                Esto es un simulador. Los cálculos mostrados consideran que la compra se realizó hoy,
+                {formattedDate}:{' '}
+              </span>
+            )}
+            <form style={{ margin: 'auto'}}>
               <Step title="Paso 1" subtitle="Ingresa el número de tu Tarjeta Estilos" id={'step-1'}>
                 <CardInput value={cardNumber} onChange={handleCardNumberChange} />
               </Step>
@@ -465,8 +466,8 @@ const PaymentForm: FC<Props> = () => {
             </form>
 
             <SimulationTable
-            paymentType={paymentType}
-            selectedTerm={selectedTerm}
+              paymentType={paymentType}
+              selectedTerm={selectedTerm}
               id="simulation"
               simulation={simulation}
               onChangeFullscreen={changeSimulationFullscreen}
@@ -481,13 +482,7 @@ const PaymentForm: FC<Props> = () => {
                 }}
               />
             )}
-            {!simulation &&<p style={{ width: '264px', margin: 'auto' }}>
-              Los datos proporcionados por el simulador de cuotas son únicamente referenciales. Los valores reales se
-              calcularán y confirmarán una vez que se complete el proceso de compra. Te recomendamos utilizar esta
-              información como una guía inicial y no como un compromiso definitivo.
-            </p>}
           </main>
-
           <footer className={styles['footer-paymentapp']}>
             {orderForm ? (
               <p className={styles['checkout-total-installments']}>
@@ -498,12 +493,8 @@ const PaymentForm: FC<Props> = () => {
             )}
             {mainTotal != 0 && simulation && paymentType != '' && paymentType != '1' ? (
               <p className={styles['checkout-total-installments']}>
-                Total en cuotas:{' '}
-                {selectedTerm !== '1' ? (
-                  <>{currencyFormatter.format(mainTotal)}</>
-                ) : (
-                  <>{currencyFormatter.format(orderForm?.value / 100)}</>
-                )}
+                Total en cuotas: <>{currencyFormatter.format(mainTotal)}</>
+                {/* <>{currencyFormatter.format(orderForm?.value / 100)}</> */}
               </p>
             ) : (
               <></>
@@ -522,6 +513,13 @@ const PaymentForm: FC<Props> = () => {
             <button data-style="simple" onClick={cancelPayment}>
               Cancelar
             </button>
+            {!simulation && (
+              <p style={{ width: '80%', margin: 'auto' , fontSize:'12px',lineHeight:'14px'}}>
+                Los datos proporcionados por el simulador de cuotas son únicamente referenciales. Los valores reales se
+                calcularán y confirmarán una vez que se complete el proceso de compra. Te recomendamos utilizar esta
+                información como una guía inicial y no como un compromiso definitivo.
+              </p>
+            )}
           </footer>
           <AlertModal />
         </section>
